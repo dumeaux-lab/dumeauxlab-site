@@ -67,7 +67,10 @@
 /blog/Bdd_2026                                   /news#bdd-2026                              301
 
 # ─── Catch-alls (must be last) ───────────────────────────────────────────
+# Trailing slash on the target matches Astro's directory build format and
+# avoids a Netlify quirk where /team/* → /team gets skipped because the
+# bare /team stem collides with the existing /team/ directory.
 # Any other /blog/<anything> → news index
-/blog/*           /news        301
+/blog/*           /news/       301
 # Any other /team/<name> the old site exposed → team page
-/team/*           /team        301
+/team/*           /team/       301

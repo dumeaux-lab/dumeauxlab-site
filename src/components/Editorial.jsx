@@ -465,9 +465,9 @@ function ResearchPage() {
         <div style={{ fontFamily: MONO, fontSize: 9.5, letterSpacing: 2, textTransform: "uppercase", color: WP, marginBottom: 14 }}>Key collaborators</div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "8px 24px" }}>
           {COLLABS.map((c) => {
-            const label = <><span>{c.name}</span><span style={{ fontStyle: "normal", fontFamily: SANS, fontWeight: 400, fontSize: 12, color: MUTED, marginLeft: 8 }}>({c.affiliation})</span></>;
+            const label = <><span>{c.name}</span><span style={{ fontFamily: SANS, fontWeight: 400, fontSize: 12, color: MUTED, marginLeft: 8 }}>({c.affiliation})</span></>;
             return (
-              <div key={c.name} style={{ fontSize: 14, fontStyle: "italic", fontFamily: DISPLAY, padding: "6px 0", fontWeight: 700 }}>
+              <div key={c.name} style={{ fontFamily: SANS, fontSize: 15, fontWeight: 600, padding: "6px 0" }}>
                 {c.url
                   ? <a href={c.url} target="_blank" rel="noopener noreferrer" style={{ color: INK, textDecoration: "none", borderBottom: `1px solid ${WO}` }}>{label}</a>
                   : label}
@@ -778,7 +778,10 @@ function PeoplePage({ team = [] }) {
       <div className="section-pad" style={{ padding: "36px 40px", borderBottom: `1px solid ${RULE}`, background: BG2 }}>
         <div style={{ fontFamily: MONO, fontSize: 9.5, letterSpacing: 2, textTransform: "uppercase", color: MUTED, marginBottom: 16 }}>Alumni</div>
         <div className="split-4" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: "0 24px" }}>
-          {team.filter((t) => t.alum).map((t, i) =>
+          {team
+            .filter((t) => t.alum)
+            .sort((a, b) => (a.joined ?? 0) - (b.joined ?? 0) || a.name.localeCompare(b.name))
+            .map((t, i) =>
           <div key={i} style={{ display: "grid", gridTemplateColumns: "32px 1fr", alignItems: "center", gap: 10, padding: "9px 0", borderTop: `1px solid ${RULE}` }}>
               <img src={TEAM_PHOTOS[t.photoKey]} style={{ width: 32, height: 32, borderRadius: "50%", objectFit: "cover" }} />
               <div>

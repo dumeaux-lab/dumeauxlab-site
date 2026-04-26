@@ -1,0 +1,124 @@
+---
+interface Props {
+  title?: string;
+}
+const { title = "Dumeaux Lab" } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>{title}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style is:global>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; }
+body { background: #f7f4ef; font-family: 'Inter Tight', system-ui, sans-serif; }
+img, svg, iframe { max-width: 100%; }
+#app-frame { max-width: 1440px; margin: 0 auto; box-shadow: 0 0 0 1px rgba(0,0,0,0.06), 0 20px 60px rgba(0,0,0,0.06); min-height: 100vh; background: #f7f4ef; }
+
+/* ─── Responsive overrides ─────────────────────────────────────────────────
+   Inline styles win at normal specificity, so layout overrides below use
+   !important. Limited to the layout/scale axes (display, grid-template-
+   columns, font-size, padding, gap, margin) — colors, fonts, weights, and
+   borders stay untouched so the editorial typography survives unchanged.
+*/
+
+/* TABLET — collapse 4-col to 2-col, ease the largest type. */
+@media (max-width: 1024px) {
+  .split-4 { grid-template-columns: 1fr 1fr !important; }
+  .pillar-grid { grid-template-columns: 1fr 1fr !important; }
+  .hero h1 { font-size: 48px !important; }
+  .hero .hero-mark { width: 220px !important; height: 220px !important; }
+  .hero .hero-panel { min-height: 340px !important; }
+  .research-headline { font-size: 56px !important; }
+  .pi-headline { font-size: 44px !important; }
+  .news-headline { font-size: 48px !important; }
+  .papers-headline { font-size: 48px !important; }
+}
+
+/* MOBILE — collapse everything to a single column. */
+@media (max-width: 720px) {
+  /* Page chrome */
+  .nav-row { grid-template-columns: 1fr auto !important; height: auto !important; padding: 10px 16px !important; gap: 8px !important; }
+  .nav-row .nav-center { display: flex !important; flex-wrap: wrap !important; gap: 14px !important; grid-column: 1 / -1; padding-top: 6px !important; }
+  .nav-row .nav-right { display: none !important; }
+  .footer-row { grid-template-columns: 1fr !important; gap: 28px !important; padding: 28px 20px !important; }
+
+  /* Universal layout collapses */
+  .split-2,
+  .split-3,
+  .split-4,
+  .sidebar-row,
+  .pillar-grid,
+  .papers-news,
+  .lab-notebook,
+  .team-grid,
+  .news-row,
+  .pi-hero,
+  .pi-section,
+  .software-row,
+  .software-detail-row,
+  .contact-row,
+  .modal-row { grid-template-columns: 1fr !important; gap: 20px !important; }
+
+  /* Section padding — was 40-64 / 40 — squeeze sides for mobile */
+  .section-pad { padding-left: 20px !important; padding-right: 20px !important; }
+
+  /* Hero — drop offset that was pushing picture below kicker; shrink the panel */
+  .hero { padding: 36px 20px !important; gap: 24px !important; grid-template-columns: 1fr !important; }
+  .hero h1 { font-size: 38px !important; line-height: 1.1 !important; }
+  .hero .hero-blurb { font-size: 15px !important; max-width: 100% !important; }
+  .hero .hero-panel { min-height: 280px !important; margin-top: 0 !important; }
+  .hero .hero-mark { width: 180px !important; height: 180px !important; }
+
+  /* Headline scaling on the section landing pages */
+  .research-headline { font-size: 38px !important; line-height: 1.05 !important; }
+  .pi-headline { font-size: 34px !important; }
+  .news-headline { font-size: 36px !important; }
+  .papers-headline { font-size: 36px !important; }
+  .software-headline { font-size: 36px !important; }
+  .contact-headline { font-size: 36px !important; }
+  .team-headline { font-size: 36px !important; }
+  .pi-card-headline { font-size: 30px !important; line-height: 1.1 !important; }
+
+  /* Mission strip in the home page — quote shrinks */
+  .mission-strip { padding: 24px 20px !important; }
+  .mission-strip > div { font-size: 18px !important; }
+
+  /* Research section padding inside HomePage — defensive fallback */
+  .research-band { padding: 36px 20px !important; }
+
+  /* Pillars on home & research index — tighter cards */
+  .pillar-card-pad { padding: 36px 20px !important; }
+
+  /* News post body — sticky sidebar header becomes a normal stacked header */
+  .news-post-row > header { position: static !important; }
+
+  /* PI hero portrait column — shrink the fixed 220 px */
+  .pi-hero > div:first-child img { max-width: 200px !important; }
+
+  /* Team page PI summary block: avatar shrinks, text wraps */
+  .pi-card-row { grid-template-columns: 56px 1fr !important; gap: 14px !important; padding: 20px !important; }
+  .pi-card-row img { width: 56px !important; height: 56px !important; }
+
+  /* Joining-the-lab CTA: button drops below text instead of sitting beside */
+  .cta-row { grid-template-columns: 1fr !important; gap: 14px !important; padding: 28px 20px !important; }
+
+  /* Bluesky carousel: tighten the post cards */
+  .bsky-card { grid-template-columns: 48px 1fr !important; gap: 8px !important; }
+
+  /* News post image grids: collapse to single column when ≥3 images */
+  .news-image-grid { grid-template-columns: 1fr !important; }
+}
+</style>
+</head>
+<body>
+<div id="app-frame">
+  <slot />
+</div>
+</body>
+</html>

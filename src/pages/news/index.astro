@@ -1,0 +1,14 @@
+---
+import Base from "../../layouts/Base.astro";
+import { NewsPage } from "../../components/Editorial.jsx";
+import { getCollection } from "astro:content";
+
+// One markdown file per post in src/content/news/
+const entries = await getCollection("news");
+const posts = entries
+  .map((e) => ({ slug: e.id, ...e.data }))
+  .sort((a, b) => b.date.localeCompare(a.date));
+---
+<Base title="News — Dumeaux Lab">
+  <NewsPage client:load posts={posts} />
+</Base>

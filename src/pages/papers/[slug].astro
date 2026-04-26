@@ -1,0 +1,120 @@
+---
+import Base from "../../layouts/Base.astro";
+import { Nav, Footer } from "../../components/Editorial.jsx";
+import { getCollection, render } from "astro:content";
+
+// One static page per paper markdown file
+export async function getStaticPaths() {
+  const papers = await getCollection("papers");
+  return papers.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const p = entry.data;
+
+// Design tokens (kept in sync with Editorial.jsx)
+const BG = "#f7f4ef";
+const WP = "#4F2683";
+const WO = "#8F55E0";
+const INK = "#1a1814";
+const MUTED = "#6b6459";
+const RULE = "#ddd8ce";
+const BG2 = "#efe9dd";
+const DISPLAY = "'Playfair Display', Georgia, serif";
+const SANS = "'Inter Tight', system-ui, sans-serif";
+const MONO = "'JetBrains Mono', Menlo, monospace";
+---
+<Base title={`${p.title} — Dumeaux Lab`}>
+  <div style={`background:${BG};color:${INK};`}>
+    <Nav active="Papers" />
+
+    {/* Back link */}
+    <div class="section-pad" style={`padding:16px 40px;border-bottom:1px solid ${RULE};`}>
+      <a href="/papers" style={`font-family:${MONO};font-size:10px;letter-spacing:1px;color:${WP};text-decoration:none;`}>← Publications</a>
+    </div>
+
+    {/* Header — full white band, image (if any) on the left, title block on the right */}
+    <div class="paper-header sidebar-row section-pad" style={`background:#ffffff;padding:48px 40px 40px;border-bottom:1px solid ${RULE};display:grid;grid-template-columns:${p.image ? "200px 1fr" : "1fr"};gap:48px;align-items:start;`}>
+      {p.image && (
+        <figure style="margin:0;">
+          {/* Never upscale beyond the figure's natural width — column is 200px,
+              so small source figures stay crisp at native size. */}
+          <img src={p.image} alt={`Figure from ${p.title}`}
+               style="display:block;max-width:100%;width:auto;height:auto;image-rendering:-webkit-optimize-contrast;"
+               loading="lazy" />
+        </figure>
+      )}
+      <div>
+        <div style={`font-family:${MONO};font-size:9.5px;letter-spacing:2.5px;text-transform:uppercase;color:${WP};margin-bottom:14px;`}>
+          § {p.tag} · {p.year}
+        </div>
+        <h1 class="paper-title" style={`font-family:${DISPLAY};font-weight:900;font-size:42px;letter-spacing:-0.6px;line-height:1.1;margin-bottom:18px;max-width:900px;`}>
+          {p.title}
+        </h1>
+        <div style={`font-family:${SANS};font-size:15px;color:${MUTED};font-style:italic;margin-bottom:12px;max-width:900px;line-height:1.5;`}>
+          {p.authors}
+        </div>
+        <div style={`display:flex;gap:16px;flex-wrap:wrap;font-family:${MONO};font-size:10.5px;color:${MUTED};letter-spacing:0.4px;align-items:center;`}>
+          <span set:html={p.venue} />
+          {p.doi && (
+            <a href={`https://doi.org/${p.doi}`} target="_blank" rel="noopener noreferrer"
+               style={`color:${WP};text-decoration:none;border-bottom:1px solid ${WO};padding-bottom:1px;`}>
+              DOI ↗
+            </a>
+          )}
+          {p.pdf && (
+            <a href={p.pdf} target="_blank" rel="noopener noreferrer"
+               style={`color:${WP};text-decoration:none;border-bottom:1px solid ${WO};padding-bottom:1px;`}>
+              PDF ↗
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+
+    {/* Abstract body */}
+    <div class="sidebar-row section-pad" style={`padding:48px 40px;display:grid;grid-template-columns:200px 1fr;gap:48px;border-bottom:1px solid ${RULE};`}>
+      <div style={`font-family:${MONO};font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:${WP};`}>
+        Abstract
+      </div>
+      <article class="paper-body" style={`font-family:${SANS};font-size:15.5px;line-height:1.75;color:${INK};max-width:760px;`}>
+        <Content />
+      </article>
+    </div>
+
+    {/* Citation footer */}
+    {p.ref && (
+      <div class="sidebar-row section-pad" style={`padding:32px 40px;border-bottom:1px solid ${RULE};display:grid;grid-template-columns:200px 1fr;gap:48px;`}>
+        <div style={`font-family:${MONO};font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:${WP};`}>
+          Cite as
+        </div>
+        <div style={`font-family:${SANS};font-size:14px;color:${MUTED};line-height:1.6;max-width:760px;`}>
+          <div set:html={p.ref} />
+          {p.abbrev && p.abbrev !== p.ref && (
+            <div style="margin-top:6px;" set:html={p.abbrev} />
+          )}
+        </div>
+      </div>
+    )}
+
+    <Footer />
+  </div>
+
+  <style is:global>
+    @media (max-width: 720px) {
+      .paper-title { font-size: 30px !important; }
+      .paper-header { gap: 24px !important; }
+    }
+    .paper-body p { margin: 0 0 16px 0; }
+    .paper-body p:last-child { margin-bottom: 0; }
+    .paper-body a { color: #4F2683; border-bottom: 1px solid #8F55E0; text-decoration: none; }
+    .paper-body h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-weight: 700; margin: 28px 0 14px; }
+    .paper-body h3 { font-family: 'Inter Tight', system-ui, sans-serif; font-size: 16px; font-weight: 600; margin: 20px 0 10px; }
+    .paper-body em, .paper-body i { font-style: italic; }
+    .paper-body strong, .paper-body b { font-weight: 600; }
+  </style>
+</Base>

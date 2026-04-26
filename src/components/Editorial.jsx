@@ -780,7 +780,13 @@ function PeoplePage({ team = [] }) {
         <div className="split-4" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: "0 24px" }}>
           {team
             .filter((t) => t.alum)
-            .sort((a, b) => (b.joined ?? 0) - (a.joined ?? 0) || a.name.localeCompare(b.name))
+            .sort((a, b) => {
+              // Graduate students (MSc / PhD) first, then everyone else.
+              // Within each group: newest joiner first, then name as tiebreaker.
+              const gradA = /^(MSc|PhD)/i.test(a.role) ? 1 : 0;
+              const gradB = /^(MSc|PhD)/i.test(b.role) ? 1 : 0;
+              return (gradB - gradA) || ((b.joined ?? 0) - (a.joined ?? 0)) || a.name.localeCompare(b.name);
+            })
             .map((t, i) =>
           <div key={i} style={{ display: "grid", gridTemplateColumns: "32px 1fr", alignItems: "center", gap: 10, padding: "9px 0", borderTop: `1px solid ${RULE}` }}>
               <img src={TEAM_PHOTOS[t.photoKey]} style={{ width: 32, height: 32, borderRadius: "50%", objectFit: "cover" }} />

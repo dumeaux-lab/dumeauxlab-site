@@ -441,7 +441,6 @@ function ResearchPage() {
               <a href={`/research/${p.id}`} style={{ color: INK, textDecoration: "none" }}>
                 <div style={{ fontFamily: DISPLAY, fontSize: 32, fontWeight: 800, lineHeight: 1.05 }}>{p.title}</div>
               </a>
-              <div style={{ fontFamily: SANS, fontSize: 11, letterSpacing: 0.5, textTransform: "uppercase", color: MUTED, marginTop: 8 }}>{p.subtitle}</div>
               <div style={{ marginTop: 20, display: "flex", flexWrap: "wrap", gap: 6 }}>
                 {p.keywords.map((k) => <span key={k} style={{ fontFamily: MONO, fontSize: 9.5, color: WP, border: `1px solid ${WO}`, padding: "3px 8px" }}>{k}</span>)}
               </div>

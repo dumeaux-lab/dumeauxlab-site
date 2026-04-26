@@ -95,8 +95,8 @@ the dev server hot-reloads.
 | Research-theme detail page layout         | `src/pages/research/[slug].astro`                                   |
 | News page layout (all posts inline)       | `NewsPage()` in `src/components/Editorial.jsx`                      |
 | Papers list page                          | `PapersPage()` in `src/components/Editorial.jsx`                    |
-| Team photo                                | Add base64 data URL under slug in `src/data/team-photos.js`         |
-| News image                                | Add base64 data URL under slug in `src/data/news-images.js`         |
+| Team photo                                | Drop full-res photo in `public/assets/team/{slug}.jpg`, then run `node scripts/regen-team-photos.mjs` (see below) |
+| News image                                | Drop full-res image in `../assets/{filename}`, list it in `scripts/regen-news-images.mjs`, then run the script (see below) |
 
 ### Adding a paper
 
@@ -262,6 +262,68 @@ To **add** a fourth theme, also extend the `pillarId` enum in
 
 ---
 
+## Regenerating inlined images
+
+Team photos and news images are **base64-inlined** into JS modules
+(`src/data/team-photos.js`, `src/data/news-images.js`) so they ship in the
+HTML payload — no extra HTTP requests, crisp on first paint. Two scripts
+build those JS files from full-resolution source images.
+
+### Team photos
+
+```bash
+# 1. Drop the new full-res photo into public/assets/team/<slug>.jpg|png
+#    (slug must match the team member's photoKey in their .md)
+cp ~/Downloads/new-photo.jpg public/assets/team/jane.jpg
+
+# 2. Add the slug to the KEYS array in scripts/regen-team-photos.mjs
+#    (open the script and append "jane" to the list)
+
+# 3. Run the script
+node scripts/regen-team-photos.mjs
+
+# 4. Commit BOTH the new source and the regenerated team-photos.js
+git add public/assets/team/jane.jpg src/data/team-photos.js
+git commit -m "Add Jane to team"
+git push
+```
+
+The script center-crops to 440×440 (top-anchored — heads stay in frame),
+re-encodes as JPEG q82, and writes a fresh `src/data/team-photos.js`.
+Vanessa's photo is special-cased to use `fit: contain` (letterboxed
+instead of cropped) — see the `CONTAIN_KEYS` set in the script.
+
+### News images
+
+```bash
+# 1. Drop the new full-res image into the SIBLING assets dir
+#    (the script reads from ~/Downloads/dumeauxlab/assets/, not public/)
+cp ~/Downloads/conf-poster.jpg ../assets/conf-poster-2026.jpg
+
+# 2. Add the filename to the NAMES array in scripts/regen-news-images.mjs
+
+# 3. Run the script
+node scripts/regen-news-images.mjs
+
+# 4. Commit the regenerated news-images.js
+git add src/data/news-images.js
+git commit -m "Add conference poster to news"
+git push
+```
+
+The script downsizes each image to a max long-edge of 1400 px, JPEG q82
+(or PNG if the filename is in `KEEP_PNG` — for logos with transparency).
+Once added, reference the image from any news post via the filename:
+
+```yaml
+blocks:
+  - type: "img"
+    src: "conf-poster-2026.jpg"
+    caption: "Conference poster"
+```
+
+---
+
 ## Navigation
 
 The nav uses real `<a href>` anchors in `Nav()`
@@ -311,14 +373,26 @@ instead of onClick handlers.
 
 ## Deployment (Netlify)
 
-`npm run build` produces a fully static `./dist/` folder. Drop it on Netlify,
-point the domain, done. A `netlify.toml` can be added at the project root:
+The site is hosted on Netlify, auto-deploys on every push to `main` from
+[github.com/dumeaux-lab/dumeauxlab-site](https://github.com/dumeaux-lab/dumeauxlab-site).
+Production URL: <https://lab-dumeaux.science>.
 
-```toml
-[build]
-  command = "npm run build"
-  publish = "dist"
-```
+Build settings live in `netlify.toml` (Node 22, build command `npm run build`,
+publish dir `dist`). `.nvmrc` pins the same Node version locally.
+
+`public/_redirects` preserves inbound links from the previous Jekyll site
+(old `/blog/...`, `/team/...`, `/about`, `/software/AIPS` etc. all 301 to
+their new equivalents). When adding new redirects, list specific rules
+**before** any catch-alls — first match wins.
+
+`@astrojs/sitemap` auto-generates `sitemap-index.xml` + `sitemap-0.xml` at
+build time using the `site` URL in `astro.config.mjs`. `public/robots.txt`
+points crawlers at the sitemap index.
+
+### Rolling back a bad deploy
+
+In Netlify dashboard → **Deploys** → pick a previous successful deploy →
+**Publish deploy**. Instant rollback, no git revert needed.
 
 ---
 

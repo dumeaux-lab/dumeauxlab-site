@@ -1,0 +1,23 @@
+---
+date: "2024-05-25"
+title: "Spring 2024 lab updates — Presentations, Awards, and New Faces"
+excerpt: "Vanessa spoke at the Stanford Cancer Biology Seminar Series. Mohamed received the Vector Scholarship in AI. Welcome to summer interns Karen Ribeiro and Rohan Sonthalia!"
+tag: "Lab news"
+blocks:
+  - type: "h2"
+    text: "Presentations & Conferences"
+  - type: "p"
+    text: "Vanessa gave a talk titled \"From Genes to Microbes: Multidimensional Approaches for Predicting Breast Cancer Therapy Responses\" as part of the Stanford Cancer Biology Seminar Series."
+  - type: "p"
+    text: "She also presented a flash talk at the Having IMPACTT 4: Advancing Microbiome Research Symposium. Mohamed and Ray attended the London Health Research Day, each presenting a poster."
+  - type: "h2"
+    text: "Awards, Grants, and Scholarships"
+  - type: "p"
+    text: "We are grateful for NSERC support for our research on computational and genomic approaches for the characterization of host-adapted microbial communities."
+  - type: "p"
+    text: "Congratulations to Mohamed, who received an MSc Vector Scholarship in Artificial Intelligence. Ray received an ACB travel award to attend the Having IMPACTT 4 symposium."
+  - type: "h2"
+    text: "Welcoming New Trainees"
+  - type: "p"
+    text: "Welcome to MITACS summer interns Karen Ribeiro (medical student from Brazil) and Rohan Sonthalia (computer science & engineering, India)."
+---

@@ -1,0 +1,35 @@
+---
+import Base from "../layouts/Base.astro";
+import { HomePage } from "../components/Editorial.jsx";
+import { getCollection } from "astro:content";
+
+// Pull the 4 most recent papers to feature on the home page
+const paperEntries = await getCollection("papers");
+const recentPapers = paperEntries
+  .map((e) => ({
+    slug: e.id,
+    year: e.data.year,
+    authors: e.data.authors,
+    title: e.data.title,
+    venue: e.data.venue,
+    tag: e.data.tag,
+  }))
+  .sort((a, b) => b.year - a.year || a.title.localeCompare(b.title))
+  .slice(0, 4);
+
+// All software tools (the homepage shows the first 5)
+const softwareEntries = await getCollection("software");
+const software = softwareEntries
+  .map((e) => ({ slug: e.id, ...e.data }))
+  .sort((a, b) => b.year - a.year);
+
+// Most recent 6 news posts for the homepage strip
+const newsEntries = await getCollection("news");
+const news = newsEntries
+  .map((e) => ({ slug: e.id, ...e.data }))
+  .sort((a, b) => b.date.localeCompare(a.date))
+  .slice(0, 6);
+---
+<Base title="Dumeaux Lab">
+  <HomePage client:load tw={{ headline: "cells", figure: "western" }} recentPapers={recentPapers} software={software} news={news} />
+</Base>

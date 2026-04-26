@@ -1,0 +1,19 @@
+---
+import Base from "../../layouts/Base.astro";
+import { SoftwareDetailPage } from "../../components/Editorial.jsx";
+import { getCollection } from "astro:content";
+
+// One static page per software markdown file
+export async function getStaticPaths() {
+  const tools = await getCollection("software");
+  return tools.map((entry) => ({
+    params: { slug: entry.id },
+    props: { tool: { slug: entry.id, ...entry.data } },
+  }));
+}
+
+const { tool } = Astro.props;
+---
+<Base title={`${tool.name} — Dumeaux Lab`}>
+  <SoftwareDetailPage tool={tool} />
+</Base>

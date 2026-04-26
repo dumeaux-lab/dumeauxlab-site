@@ -1,0 +1,122 @@
+---
+import Base from "../../layouts/Base.astro";
+import { Nav, Footer } from "../../components/Editorial.jsx";
+import { PILLARS } from "../../data/shared.jsx";
+import { getCollection, render } from "astro:content";
+
+// One static page per research-theme markdown file
+export async function getStaticPaths() {
+  const themes = await getCollection("research");
+  return themes.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const t = entry.data;
+const pillar = PILLARS.find((p) => p.id === t.pillarId) || {};
+
+// Design tokens (kept in sync with Editorial.jsx)
+const BG = "#f7f4ef";
+const WP = "#4F2683";
+const WO = "#8F55E0";
+const INK = "#1a1814";
+const MUTED = "#6b6459";
+const RULE = "#ddd8ce";
+const DISPLAY = "'Playfair Display', Georgia, serif";
+const SANS = "'Inter Tight', system-ui, sans-serif";
+const MONO = "'JetBrains Mono', Menlo, monospace";
+---
+<Base title={`${t.title} — Dumeaux Lab`}>
+  <div style={`background:${BG};color:${INK};`}>
+    <Nav active="Research" />
+
+    {/* Back link */}
+    <div class="section-pad" style={`padding:16px 40px;border-bottom:1px solid ${RULE};`}>
+      <a href="/research" style={`font-family:${MONO};font-size:10px;letter-spacing:1px;color:${WP};text-decoration:none;`}>← Research programme</a>
+    </div>
+
+    {/* Header — cream band */}
+    <div class="section-pad" style={`background:${BG};padding:48px 40px 40px;border-bottom:1px solid ${RULE};`}>
+      <div style={`font-family:${MONO};font-size:9.5px;letter-spacing:2.5px;text-transform:uppercase;color:${WP};margin-bottom:14px;`}>
+        § {t.kicker || pillar.num} · {t.title}
+      </div>
+      <h1 class="research-detail-title" style={`font-family:${DISPLAY};font-weight:900;font-size:54px;letter-spacing:-0.8px;line-height:1.05;margin-bottom:18px;max-width:1000px;`}>
+        {t.title}
+      </h1>
+      {t.subtitle && (
+        <div style={`font-family:${SANS};font-size:17px;color:${MUTED};margin-bottom:18px;max-width:900px;line-height:1.5;`}>
+          {t.subtitle}
+        </div>
+      )}
+      {pillar.keywords && (
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;">
+          {pillar.keywords.map((k) => (
+            <span style={`font-family:${MONO};font-size:9.5px;color:${WP};border:1px solid ${WO};padding:3px 8px;`}>{k}</span>
+          ))}
+        </div>
+      )}
+      {pillar.methods && (
+        <div style={`margin-top:18px;font-family:${MONO};font-size:9.5px;color:${MUTED};letter-spacing:0.5px;text-transform:uppercase;`}>
+          Methods — {pillar.methods.join(" · ")}
+        </div>
+      )}
+    </div>
+
+    {/* Intro lede (optional) */}
+    {t.intro && (
+      <div class="sidebar-row section-pad" style={`background:#ffffff;padding:36px 40px 0;display:grid;grid-template-columns:200px 1fr;gap:48px;`}>
+        <div style={`font-family:${MONO};font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:${WP};`}>
+          Overview
+        </div>
+        <p style={`font-family:${DISPLAY};font-style:italic;font-size:21px;line-height:1.5;color:${INK};max-width:760px;margin:0;`}>
+          {t.intro}
+        </p>
+      </div>
+    )}
+
+    {/* Body */}
+    <div class="sidebar-row section-pad" style={`background:#ffffff;padding:36px 40px 56px;display:grid;grid-template-columns:200px 1fr;gap:48px;border-bottom:1px solid ${RULE};`}>
+      <div style={`font-family:${MONO};font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:${WP};`}>
+        Programme
+      </div>
+      <article class="research-body" style={`font-family:${SANS};font-size:15.5px;line-height:1.75;color:${INK};max-width:760px;`}>
+        <Content />
+      </article>
+    </div>
+
+    <Footer />
+  </div>
+
+  <style is:global>
+    .research-body p { margin: 0 0 16px 0; }
+    .research-body p:last-child { margin-bottom: 0; }
+    .research-body a { color: #4F2683; border-bottom: 1px solid #8F55E0; text-decoration: none; }
+    .research-body h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 26px; font-weight: 800; margin: 36px 0 14px; letter-spacing: -0.3px; clear: both; }
+    .research-body h3 { font-family: 'Inter Tight', system-ui, sans-serif; font-size: 16px; font-weight: 600; margin: 22px 0 10px; clear: both; }
+    .research-body em, .research-body i { font-style: italic; }
+    .research-body strong, .research-body b { font-weight: 600; }
+    .research-body ul { margin: 0 0 16px 0; padding-left: 22px; }
+    .research-body li { margin-bottom: 6px; }
+    .research-body img {
+      /* Never upscale: cap at min(natural width, 45% column, 340px). */
+      width: auto;
+      height: auto;
+      max-width: min(45%, 340px);
+      float: right;
+      margin: 6px 0 18px 28px;
+      clear: right;
+      image-rendering: -webkit-optimize-contrast;
+    }
+    @media (max-width: 720px) {
+      .research-detail-title { font-size: 36px !important; line-height: 1.08 !important; }
+      .research-body img {
+        max-width: 100%;
+        float: none;
+        margin: 18px 0;
+      }
+    }
+  </style>
+</Base>

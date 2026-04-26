@@ -1,0 +1,14 @@
+---
+import Base from "../layouts/Base.astro";
+import { PeoplePage } from "../components/Editorial.jsx";
+import { getCollection } from "astro:content";
+
+// One markdown file per team member in src/content/team/
+const entries = await getCollection("team");
+const team = entries
+  .map((e) => ({ ...e.data }))
+  .sort((a, b) => a.joined - b.joined);
+---
+<Base title="The Lab — Dumeaux Lab">
+  <PeoplePage client:load team={team} />
+</Base>

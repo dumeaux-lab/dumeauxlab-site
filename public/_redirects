@@ -1,0 +1,73 @@
+# Netlify _redirects — preserve incoming links from the old Jekyll site
+# (researchweb on Bitbucket, Jekyll permalink format /:categories/:title)
+# Status 301 = permanent redirect (good for SEO).
+# First match wins, so list specific rules before catch-alls.
+
+# ─── Top-level pages ──────────────────────────────────────────────────────
+/about            /pi          301
+/about/           /pi          301
+/blog             /news        301
+/blog/            /news        301
+/join             /contact     301
+/join/            /contact     301
+/archive          /news        301
+/archive/         /news        301
+/categories       /news        301
+/categories/      /news        301
+/tags             /news        301
+/tags/            /news        301
+/pages            /news        301
+/pages/           /news        301
+/misc             /            301
+/misc/            /            301
+# /contact, /papers, /research, /software, /team — slugs unchanged, no rule needed.
+
+# ─── Old Jekyll team page → PI page or team page ─────────────────────────
+/team/Vanessa-Dumeaux        /pi      301
+
+# ─── Software slug case fixes & merged routes ────────────────────────────
+/software/AIPS               /software/aips     301
+/software/mixt-web           /software/mixt     301
+/software/mixt-app           /software/mixt     301
+# /software/mixt, /software/candescence, /software/microbiome2brain — already match.
+
+# ─── Blog posts → News posts (with anchor for in-page jump) ──────────────
+/blog/hello-world                                /news                                       301
+/blog/Systems-Genetics-Workshop                  /news#systems-genetics-workshop-2018        301
+/blog/walrus                                     /news#walrus-preprint-2018                  301
+/blog/Canadian-Epigenetics-Conference            /news#canadian-epigenetics-conference-2018  301
+/blog/IRIC-symposium                             /news#iric-symposium-2018                   301
+/blog/Barbados-Bellairs-Single-Cell-Genomics     /news#bdd-2019                              301
+/blog/Exciting-times                             /news#microbiome2brain-launch-2019          301
+/blog/Join-us-pcrc2019                           /news#pcrc-2019                             301
+/blog/study-launch                               /news#microbiome2brain-study-2019           301
+/blog/affiliate                                  /news#affiliate-concordia-2019              301
+/blog/usra                                       /news#usra-showcase-2019                    301
+/blog/Barbados-Bellairs-Emerging-Model-Systems   /news#bdd-2020                              301
+/blog/postdoc-datascience                        /news#postdoc-position-2020                 301
+/blog/deeplearningIntro-lecture                  /news#deep-learning-lecture-2021            301
+/blog/microb2brain_IMPACTT                       /news#microbiome2brain-impactt-2021         301
+/blog/microb2brain_github                        /news#microbiome2brain-code-2021            301
+/blog/ca_epi_conf                                /news#canadian-epigenetics-conference-2021  301
+/blog/transcriptomicsIntro-lecture               /news#transcriptomics-lecture-2021          301
+/blog/western                                    /news#western-2022                          301
+/blog/CellsInSpace                               /news#cells-in-space-2022                   301
+/blog/lab-news-update                            /news#lab-news-2023                         301
+/blog/computational-paradigms                    /news#computational-paradigms-2023          301
+/blog/october-bc-awareness                       /news#breast-cancer-awareness-2023          301
+/blog/ACB-researchDay                            /news#acb-research-day-2023                 301
+/blog/spring_2024_update                         /news#spring-2024-update                    301
+/blog/Ray_MSc                                    /news#ray-msc-2024                          301
+/blog/Meet_Noor_BCC                              /news#noor-bcc-2024                         301
+/blog/Bdd_2025                                   /news#bdd-2024                              301
+/blog/deep-fMC_2025                              /news#deep-fmc-2025                         301
+/blog/dcis_preprints                             /news#dcis-preprints-2025                   301
+/blog/fall_2025_update                           /news#fall-2025-update                      301
+/blog/CIBCRunForTheCure                          /news#cibc-run-2025                         301
+/blog/Bdd_2026                                   /news#bdd-2026                              301
+
+# ─── Catch-alls (must be last) ───────────────────────────────────────────
+# Any other /blog/<anything> → news index
+/blog/*           /news        301
+# Any other /team/<name> the old site exposed → team page
+/team/*           /team        301

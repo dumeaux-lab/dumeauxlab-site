@@ -1,0 +1,24 @@
+---
+import Base from "../../layouts/Base.astro";
+import { PapersPage } from "../../components/Editorial.jsx";
+import { getCollection } from "astro:content";
+
+// Load all paper markdown files from src/content/papers/
+// and hand them to the React PapersPage component as a plain array.
+const entries = await getCollection("papers");
+const papers = entries
+  .map((e) => ({
+    slug: e.id,
+    year: e.data.year,
+    authors: e.data.authors,
+    title: e.data.title,
+    venue: e.data.venue,
+    doi: e.data.doi,
+    tag: e.data.tag,
+    summary: e.data.summary,
+  }))
+  .sort((a, b) => b.year - a.year || a.title.localeCompare(b.title));
+---
+<Base title="Papers — Dumeaux Lab">
+  <PapersPage client:load papers={papers} />
+</Base>

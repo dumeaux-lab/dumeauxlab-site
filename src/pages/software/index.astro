@@ -1,0 +1,14 @@
+---
+import Base from "../../layouts/Base.astro";
+import { SoftwarePage } from "../../components/Editorial.jsx";
+import { getCollection } from "astro:content";
+
+// One markdown file per tool in src/content/software/
+const entries = await getCollection("software");
+const software = entries
+  .map((e) => ({ slug: e.id, ...e.data }))
+  .sort((a, b) => b.year - a.year || a.name.localeCompare(b.name));
+---
+<Base title="Software — Dumeaux Lab">
+  <SoftwarePage software={software} />
+</Base>

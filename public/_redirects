@@ -23,7 +23,7 @@
 # /contact, /papers, /research, /software, /team — slugs unchanged, no rule needed.
 
 # ─── Old Jekyll team page → PI page or team page ─────────────────────────
-/team/Vanessa-Dumeaux        /pi      301
+# (Full per-name list lives at the bottom alongside the lowercase variants.)
 
 # ─── Software slug case fixes & merged routes ────────────────────────────
 /software/AIPS               /software/aips     301
@@ -73,7 +73,64 @@
 # Any other /blog/<anything> → news index
 /blog/*           /news/       301
 # Any other /team/<name> the old site exposed → team page.
-# `!` (force) overrides Netlify's loop guard that otherwise skips wildcard
-# redirects when the target shares a path prefix with an existing static
-# directory (and /team/ exists as a real Astro-built directory).
-/team/*           /team/       301!
+# Note: the wildcard source `/team/*` is silently dropped by Netlify's
+# redirect engine (even with `!` force) when the target shares a path
+# prefix with an existing static directory (`/team/`). So we list every
+# known old slug explicitly, plus its lowercase variant since Google
+# normalizes indexed URLs to lowercase.
+/team/Vanessa-Dumeaux             /pi      301
+/team/vanessa-dumeaux             /pi      301
+/team/Ajita_Kanthathasan          /team/   301
+/team/ajita_kanthathasan          /team/   301
+/team/Akshay_Manoj_Bhaskaran      /team/   301
+/team/akshay_manoj_bhaskaran      /team/   301
+/team/Alice_Deng                  /team/   301
+/team/alice_deng                  /team/   301
+/team/Ankit_Ray                   /team/   301
+/team/ankit_ray                   /team/   301
+/team/Arad_Keshvadi               /team/   301
+/team/arad_keshvadi               /team/   301
+/team/Athena_Ma                   /team/   301
+/team/athena_ma                   /team/   301
+/team/Aybars_Nazlica              /team/   301
+/team/aybars_nazlica              /team/   301
+/team/Binh_Tran                   /team/   301
+/team/binh_tran                   /team/   301
+/team/Bushra_Kabbani              /team/   301
+/team/bushra_kabbani              /team/   301
+/team/Dalwinder_Singh             /team/   301
+/team/dalwinder_singh             /team/   301
+/team/Eliseos-John-Mucaki         /team/   301
+/team/eliseos-john-mucaki         /team/   301
+/team/Emily_Salmini               /team/   301
+/team/emily_salmini               /team/   301
+/team/Erin_Kim                    /team/   301
+/team/erin_kim                    /team/   301
+/team/Evelyn_Cai                  /team/   301
+/team/evelyn_cai                  /team/   301
+/team/Karen_Ribeiro               /team/   301
+/team/karen_ribeiro               /team/   301
+/team/Lakni_Abeyesekera           /team/   301
+/team/lakni_abeyesekera           /team/   301
+/team/Mohamed_Meawad              /team/   301
+/team/mohamed_meawad              /team/   301
+/team/Monica_Zhang                /team/   301
+/team/monica_zhang                /team/   301
+/team/Nabeeha_Anwar               /team/   301
+/team/nabeeha_anwar               /team/   301
+/team/Noor_Rizvi                  /team/   301
+/team/noor_rizvi                  /team/   301
+/team/Qianrui_Wang                /team/   301
+/team/qianrui_wang                /team/   301
+/team/Rachel_Chellappah           /team/   301
+/team/rachel_chellappah           /team/   301
+/team/Rishi_Patel                 /team/   301
+/team/rishi_patel                 /team/   301
+/team/Rohan_Sonthalia             /team/   301
+/team/rohan_sonthalia             /team/   301
+/team/Sara%20Alajrami             /team/   301
+/team/sara%20alajrami             /team/   301
+/team/Teddy_Lee                   /team/   301
+/team/teddy_lee                   /team/   301
+/team/Yubing_Xia                  /team/   301
+/team/yubing_xia                  /team/   301

@@ -72,5 +72,8 @@
 # bare /team stem collides with the existing /team/ directory.
 # Any other /blog/<anything> → news index
 /blog/*           /news/       301
-# Any other /team/<name> the old site exposed → team page
-/team/*           /team/       301
+# Any other /team/<name> the old site exposed → team page.
+# `!` (force) overrides Netlify's loop guard that otherwise skips wildcard
+# redirects when the target shares a path prefix with an existing static
+# directory (and /team/ exists as a real Astro-built directory).
+/team/*           /team/       301!

@@ -777,26 +777,48 @@ function PeoplePage({ team = [] }) {
       {/* Alumni */}
       <div className="section-pad" style={{ padding: "36px 40px", borderBottom: `1px solid ${RULE}`, background: BG2 }}>
         <div style={{ fontFamily: MONO, fontSize: 9.5, letterSpacing: 2, textTransform: "uppercase", color: MUTED, marginBottom: 16 }}>Alumni</div>
-        <div className="split-4" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: "0 24px" }}>
-          {team
+        {(() => {
+          const isGrad = (t) => /^(MSc|PhD)/i.test(t.role);
+          const sortedAlumni = team
             .filter((t) => t.alum)
             .sort((a, b) => {
               // Graduate students (MSc / PhD) first, then everyone else.
               // Within each group: newest joiner first, then name as tiebreaker.
-              const gradA = /^(MSc|PhD)/i.test(a.role) ? 1 : 0;
-              const gradB = /^(MSc|PhD)/i.test(b.role) ? 1 : 0;
-              return (gradB - gradA) || ((b.joined ?? 0) - (a.joined ?? 0)) || a.name.localeCompare(b.name);
-            })
-            .map((t, i) =>
-          <div key={i} style={{ display: "grid", gridTemplateColumns: "32px 1fr", alignItems: "center", gap: 10, padding: "9px 0", borderTop: `1px solid ${RULE}` }}>
+              const ga = isGrad(a) ? 1 : 0;
+              const gb = isGrad(b) ? 1 : 0;
+              return (gb - ga) || ((b.joined ?? 0) - (a.joined ?? 0)) || a.name.localeCompare(b.name);
+            });
+          const grads = sortedAlumni.filter(isGrad);
+          const undergrads = sortedAlumni.filter((t) => !isGrad(t));
+          const groupHeader = (label, isFirst) =>
+            <div style={{ fontFamily: MONO, fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: WP, marginTop: isFirst ? 0 : 22, marginBottom: 8 }}>
+              {label}
+            </div>;
+          const card = (t, i) =>
+            <div key={i} style={{ display: "grid", gridTemplateColumns: "32px 1fr", alignItems: "center", gap: 10, padding: "9px 0", borderTop: `1px solid ${RULE}` }}>
               <img src={TEAM_PHOTOS[t.photoKey]} style={{ width: 32, height: 32, borderRadius: "50%", objectFit: "cover" }} />
               <div>
                 <div style={{ fontFamily: SANS, fontSize: 13, fontWeight: 500 }}>{t.name}</div>
                 <div style={{ fontFamily: MONO, fontSize: 9, color: MUTED, letterSpacing: 0.3, textTransform: "uppercase", marginTop: 1 }}>{t.role}</div>
               </div>
-            </div>
-          )}
-        </div>
+            </div>;
+          return (
+            <>
+              {grads.length > 0 && <>
+                {groupHeader("Graduate students", true)}
+                <div className="split-4" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: "0 24px" }}>
+                  {grads.map(card)}
+                </div>
+              </>}
+              {undergrads.length > 0 && <>
+                {groupHeader("Undergraduate students", grads.length === 0)}
+                <div className="split-4" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: "0 24px" }}>
+                  {undergrads.map(card)}
+                </div>
+              </>}
+            </>
+          );
+        })()}
       </div>
 
       {/* Join CTA */}

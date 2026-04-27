@@ -277,7 +277,7 @@ function HomePage({ tw, recentPapers = [], software = [], news = [] }) {
             tumors,<br />
             microbiomes.
           </h1>
-          <p className="hero-blurb" style={{ fontFamily: SANS, fontSize: 16, lineHeight: 1.65, color: MUTED, marginTop: 22, maxWidth: 620 }}>We apply single-cell and computational genomics to two connected problems: the crosstalk between a patient's immune system and their breast tumor, and the functional variation within human microbial communities — from gut microbiomes to fungal pathogens.</p>
+          <p className="hero-blurb" style={{ fontFamily: SANS, fontSize: 16, lineHeight: 1.65, color: MUTED, marginTop: 22, maxWidth: 620 }}>Our lab applies single-cell and computational genomics to two main questions: how a patient's immune system interacts with their breast tumor, and how function varies within human microbial communities such as the gut microbiome and fungal pathogens.</p>
           <div style={{ display: "flex", gap: 12, marginTop: 32, flexWrap: "wrap" }}>
             <button onClick={() => window.location.href = "/research"} style={{ background: WP, color: "#fff", border: "none", padding: "13px 24px", fontFamily: SANS, fontSize: 13, fontWeight: 600, cursor: "pointer", letterSpacing: 0.2 }}>Read our research →</button>
             <button onClick={() => window.location.href = "/team"} style={{ background: "none", color: INK, border: `1.5px solid ${INK}`, padding: "13px 24px", fontFamily: SANS, fontSize: 13, fontWeight: 500, cursor: "pointer" }}>Meet the team</button>
@@ -327,7 +327,7 @@ function HomePage({ tw, recentPapers = [], software = [], news = [] }) {
       {/* Mission strip */}
       <div className="mission-strip" style={{ background: WP, padding: "36px 40px" }}>
         <div style={{ maxWidth: 900, margin: "0 auto", fontFamily: DISPLAY, fontSize: 24, fontWeight: 700, color: "#fff", fontStyle: "italic", lineHeight: 1.4, textAlign: "center" }}>
-          "Single-cell and computational genomics are transforming our ability to dissect cell-level heterogeneity — from human immune responses to microbial communities."
+          "Single-cell and computational genomics are transforming how we dissect cell-level heterogeneity in human tissues, immune responses, and microbial communities."
         </div>
       </div>
 
@@ -431,7 +431,7 @@ function ResearchPage() {
           One cell at a time.
         </h1>
         <p style={{ fontFamily: SANS, fontSize: 16, lineHeight: 1.6, color: MUTED, marginTop: 24, maxWidth: 680 }}>
-          We profile blood, tumors, and microbes from single cells to whole communities — and develop the computational methods that turn those signals into ways to predict, treat, and monitor disease.
+          We profile blood, tumors, and microbes from single cells to whole communities, and build the computational methods that turn those signals into predictions of treatment response and disease progression.
         </p>
       </div>
       {PILLARS.map((p, i) => <div key={p.id} className="pillar-card-pad" style={{ padding: "52px 40px", borderBottom: `1px solid ${RULE}`, background: i % 2 === 1 ? BG2 : BG }}>

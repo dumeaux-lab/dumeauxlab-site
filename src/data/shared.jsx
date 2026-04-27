@@ -32,7 +32,7 @@ export const PILLARS = [
     title: "Microbial Communities",
     subtitle: "Phenotypic heterogeneity from single fungal cells to community-scale function",
     blurb:
-      "Single-cell and computational approaches to read microbial life across scales — from individual fungal cells, to multi-species interactions, to the functional configurations that organize the human gut microbiome.",
+      "Single-cell and computational approaches to read microbial life across scales: individual fungal cells, multi-species interactions, and the functional configurations that organize the human gut microbiome.",
     keywords: ["gut microbiome", "C. albicans", "functional archetypes", "scRNA-seq"],
     methods: ["microbial scRNA-seq", "deep learning", "archetypal analysis"],
   },
@@ -42,7 +42,7 @@ export const PILLARS = [
     title: "Computational Methods",
     subtitle: "Systems epidemiology for the genomics era",
     blurb:
-      "Integrating -omics with epidemiology so complex real-life data can inform causation, not just correlation. We build the tools — MIxT, PREFFECT, Candescence — that let the rest of the lab do its work.",
+      "We combine -omics with epidemiology to push complex real-world data toward questions of causation, not just correlation. The tools we've built along the way, such as MIxT, PREFFECT, and Candescence, support the rest of the lab's work.",
     keywords: ["systems epidemiology", "FFPE RNA-seq", "multi-tissue integration"],
     methods: ["probabilistic models", "graph neural nets", "R / Python packages"],
   },

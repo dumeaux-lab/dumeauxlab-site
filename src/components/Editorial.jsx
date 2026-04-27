@@ -1168,7 +1168,7 @@ function ContactPage() {
         </div>
         <div>
           <h2 style={{ fontFamily: DISPLAY, fontSize: 32, fontWeight: 800, letterSpacing: -0.5, marginBottom: 16 }}>Collaborations</h2>
-          <p style={{ fontSize: 15, lineHeight: 1.65, color: MUTED }}>We collaborate across computational biology, cancer genomics, microbiology, immunology, and clinical research. If you have a dataset, a question, or complementary expertise — reach out.</p>
+          <p style={{ fontSize: 15, lineHeight: 1.65, color: MUTED }}>We collaborate across computational biology, cancer genomics, microbiology, immunology, and clinical research. If you have a dataset, a question, or complementary expertise, reach out.</p>
         </div>
       </div>
       <Footer />

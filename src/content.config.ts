@@ -140,16 +140,4 @@ const research = defineCollection({
   }),
 });
 
-// ─── Completed projects (per theme) ────────────────────────────────────
-// Optional sibling body for any pillar. Rendered as its own "Completed
-// projects" section underneath the main programme on the theme detail
-// page. One .md file per pillar in src/content/research-completed/, with
-// filename stem matching a PILLARS id.
-const researchCompleted = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/research-completed" }),
-  schema: z.object({
-    pillarId: z.enum(["tumor-host", "microbiome", "methods"]),
-  }),
-});
-
-export const collections = { papers, team, software, news, research, researchCompleted };
+export const collections = { papers, team, software, news, research };

@@ -3,7 +3,7 @@ title: "Microbial Communities"
 pillarId: "microbiome"
 kicker: "02 / 03"
 subtitle: "Phenotypic heterogeneity from single fungal cells to community-scale function"
-intro: "We develop single-cell and computational approaches to read microbial life at multiple scales — from individual fungal cells, to the multi-species interactions that shape complex communities, to the functional configurations that organize the human gut microbiome as a whole."
+intro: "We develop single-cell and computational approaches to read microbial life across scales: individual fungal cells, the multi-species interactions that shape complex communities, and the functional configurations that organize the human gut microbiome."
 ---
 
 ## Phenotypic heterogeneity, one cell at a time
@@ -12,7 +12,7 @@ intro: "We develop single-cell and computational approaches to read microbial li
 
 Genetically identical microbes do not all behave the same way. Within an isogenic population, individual cells diverge in transcriptional state, metabolism, and survival strategy — a phenomenon known as *phenotypic heterogeneity*. In pathogens like *Candida albicans*, this variability lets a small fraction of cells survive antifungal exposure and seed treatment failure. In the gut microbiome, the same principle plays out across species: heterogeneous subpopulations enable division of labor, bet-hedging, and resilience to environmental change. Bulk RNA-seq averages over all of this; we need single-cell resolution to see it.
 
-Our [eLife 2023 study](/papers/sc-candida-elife-2023) was the first to tailor a nanolitre-droplet scRNA-seq assay to the fungal pathogen *Candida albicans*, using it to dissect how genetically identical individuals mount distinct cytoprotective programs against fluconazole, caspofungin, and nystatin. Building on that platform, we are extending these ideas to other adaptive states in *C. albicans* — including ongoing work with [Lucy Xie](https://chemsysbio.stanford.edu/students/alumni/jing-lin-lucy-xie/) (Stanford) — and developing the experimental and computational tooling needed to apply single-cell profiling to *complex microbial communities*, where current methods still struggle.
+Our [eLife 2023 study](/papers/sc-candida-elife-2023) was the first to tailor a nanolitre-droplet scRNA-seq assay to the fungal pathogen *Candida albicans*, then used it to dissect how genetically identical cells mount distinct cytoprotective programs against fluconazole, caspofungin, and nystatin. Building on that platform, we are extending these ideas to other adaptive states in *C. albicans*, including ongoing work with [Lucy Xie](https://chemsysbio.stanford.edu/students/alumni/jing-lin-lucy-xie/) (Stanford), and developing experimental and computational tooling for single-cell profiling of *complex microbial communities*, where current methods still struggle.
 
 ## Computational approaches for community-scale function
 
@@ -20,15 +20,15 @@ Our [eLife 2023 study](/papers/sc-candida-elife-2023) was the first to tailor a 
 
 Resolving microbial behaviour cell by cell is one half of the picture; understanding how those cells organize into functional communities is the other. We develop computational approaches that integrate large-scale metagenomic data to characterize how microbes assemble, interact, and contribute to host physiology.
 
-One example is **deep-fMC**, our deep-learning framework for identifying *functional microbial configurations* in whole-population gut metagenomes. In an [analysis of nearly 10,000 healthy adult samples across 29 countries](/papers/deep-fmc-biorxiv2025), we found that the gut's functional space is bounded by three archetypes — one centred on sugar metabolism, one on fatty-acid metabolism, one on amino-acid and nitrogen metabolism. Most individuals are blends; proximity to a single archetype tracks with stability, and the archetypes themselves act as confounders in disease-associated signatures across type-2 diabetes, colorectal cancer, and inflammatory bowel disease.
+One example is **deep-fMC**, our deep-learning framework for identifying *functional microbial configurations* in whole-population gut metagenomes. In an [analysis of nearly 10,000 healthy adult samples across 29 countries](/papers/deep-fmc-biorxiv2025), we found that the gut's functional space is bounded by three archetypes: one centred on sugar metabolism, one on fatty-acid metabolism, one on amino-acid and nitrogen metabolism. Most individuals are blends. Proximity to a single archetype tracks with stability, and the archetypes themselves act as confounders in disease-associated signatures across type-2 diabetes, colorectal cancer, and inflammatory bowel disease.
 
-deep-fMC is one piece of a broader programme. We are also developing approaches to model microbe–microbe and microbe–host interactions, link community-scale functional descriptions to the cellular and sub-community dynamics that produce them, and identify the contexts in which a perturbation — diet, drug, dysbiosis — actually shifts a community's functional state.
+deep-fMC is one piece of a broader programme. We are also developing approaches to model microbe–microbe and microbe–host interactions, link community-scale functional descriptions to the cellular and sub-community dynamics that produce them, and identify the contexts in which a perturbation (diet, drug, dysbiosis) actually shifts a community's functional state.
 
 ## Contribution of the brain–gut–microbiota axis in health
 
 ![The brain–gut–microbiome axis](/assets/images/research/microbiome2brain.jpg)
 
-Each human gut harbors trillions of microbes whose collective genome — the microbiome — outnumbers the host's by 150-to-300×. Beyond digestion, this community shapes immune tone, metabolism, and even brain function via the *brain–gut–microbiome axis*: gas, chemical, and neurotransmitter signals from the gut feed back to brain regions controlling stress, satiation, sleep, memory, and cognition. Because the microbiome is itself highly variable between individuals, single-snapshot studies are easy to over-interpret. We profile gut microbiota and brain activity *before and after* defined interventions — pairing each subject to themselves so that microbiome-derived effects can be separated from baseline interpersonal variation.
+Each human gut harbors trillions of microbes whose collective genome (the microbiome) outnumbers the host's by 150–300×. Beyond digestion, this community shapes immune tone, metabolism, and even brain function via the *brain–gut–microbiome axis*: gas, chemical, and neurotransmitter signals from the gut feed back to brain regions controlling stress, satiation, sleep, memory, and cognition. Because the microbiome is itself highly variable between individuals, single-snapshot studies are easy to over-interpret. We profile gut microbiota and brain activity *before and after* defined interventions, pairing each subject to themselves so that microbiome-derived effects can be separated from baseline interpersonal variation.
 
 ## Selected papers
 

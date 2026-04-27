@@ -3,12 +3,12 @@ title: "Computational Methods"
 pillarId: "methods"
 kicker: "03 / 03"
 subtitle: "Systems epidemiology for the genomics era"
-intro: "We build the probabilistic models, neural networks, and software packages that integrate -omics data with population-scale epidemiology — so complex real-life data can inform causation, not just correlation."
+intro: "We build the probabilistic models, neural networks, and software packages that integrate -omics data with population-scale epidemiology, so messy real-world data can inform causation, not just correlation."
 ---
 
 ## Novel bioinformatics approaches and software
 
-We develop approaches that balance and inter-connect quantitative and biological knowledge. Many acknowledge that no field has generated higher expectations, deeper frustrations, and more *translation anxiety* than advances in human genomics. Early on, we — among others — highlighted the role of rigorous epidemiological and statistical approaches in improving the prospect of genomics and big data in personalized medicine. Our approach, termed *Systems Epidemiology* (Lund & Dumeaux, 2008 *CEBP*), proposes to integrate human -omics data with measurements from observational epidemiologic studies to better characterize the diverse range of factors influencing complex diseases, and help infer causation and support evidence-based research (Lund & Dumeaux, 2010 *Int J Epi*). In line with these concepts, we supported the development of a large biobank within the Norwegian Women and Cancer Study (Dumeaux et al., 2008 *BMC*).
+We develop approaches that connect quantitative and biological knowledge. Few fields have generated higher expectations, deeper frustrations, or more *translation anxiety* than human genomics. Early on, we argued (alongside others) for grounding the field in rigorous epidemiology and statistics if genomics and big data were to deliver on personalized medicine. We laid out this framing under the name *Systems Epidemiology* (Lund & Dumeaux, 2008 *CEBP*; Lund & Dumeaux, 2010 *Int J Epi*): integrate human -omics data with measurements from observational epidemiologic studies, characterize the factors that drive complex diseases, and infer causation rather than settling for correlation. The Norwegian Women and Cancer Study biobank (Dumeaux et al., 2008 *BMC*) was an early proving ground for this approach.
 
 ![MIxT — matched-tissue transcriptional integration](/assets/images/research/screenshot-mixt.png)
 
@@ -16,10 +16,10 @@ Critical to these efforts is the development of computational methodologies that
 
 - the sensitive detection of low-amplitude changes in blood profiles across healthy individuals (developed in *PLoS Genetics* 2010);
 - identifying genes, pathways, and processes that co-vary and interact across tissues and environments;
-- predicting activation of molecular pathways in a single-patient manner satisfying clinical-practice constraints associated with personalized medicine;
-- as well as additional methodologies within collaborative manuscripts (Huttenhower et al., 2009 *Genome Research*; Barutcuoglu et al., 2009 *Bioinformatics*; Bettauer et al., 2022 *Microbiology Spectrum*).
+- predicting molecular pathway activation patient-by-patient under the constraints clinical practice imposes;
+- and additional methodologies within collaborative manuscripts (Huttenhower et al., 2009 *Genome Research*; Barutcuoglu et al., 2009 *Bioinformatics*; Bettauer et al., 2022 *Microbiology Spectrum*).
 
-Most recently, we have extended this methodological program to **FFPE-grade transcriptomics** ([PREFFECT](/software/preffect)) and to **microbial functional archetypes** ([deep-fMC](/software/deep-fmc)) — two settings where the gap between what is technically measurable and what is clinically actionable demanded new tooling.
+More recently, we have extended this methodological program in two directions: FFPE-grade transcriptomics, through [PREFFECT](/software/preffect), and microbial functional archetypes, through [deep-fMC](/software/deep-fmc). Both are settings where a lot is technically measurable but relatively little is yet clinically actionable, and that gap is what pushed us to build new tools.
 
 ## Selected papers
 

@@ -18,6 +18,11 @@ const { Content } = await render(entry);
 const t = entry.data;
 const pillar = PILLARS.find((p) => p.id === t.pillarId) || {};
 
+// Look up the optional "Completed projects" entry for this pillar.
+const completedEntries = await getCollection("researchCompleted");
+const completedEntry = completedEntries.find((e) => e.data.pillarId === t.pillarId);
+const Completed = completedEntry ? (await render(completedEntry)).Content : null;
+
 // Design tokens (kept in sync with Editorial.jsx)
 const BG = "#f7f4ef";
 const WP = "#4F2683";
@@ -86,6 +91,18 @@ const MONO = "'JetBrains Mono', Menlo, monospace";
         <Content />
       </article>
     </div>
+
+    {/* Optional "Completed projects" body — same layout, different label */}
+    {Completed && (
+      <div class="sidebar-row section-pad" style={`background:#ffffff;padding:36px 40px 56px;display:grid;grid-template-columns:200px 1fr;gap:48px;border-bottom:1px solid ${RULE};`}>
+        <div style={`font-family:${MONO};font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:${WP};`}>
+          Completed projects
+        </div>
+        <article class="research-body" style={`font-family:${SANS};font-size:15.5px;line-height:1.75;color:${INK};max-width:760px;`}>
+          <Completed />
+        </article>
+      </div>
+    )}
 
     <Footer />
   </div>

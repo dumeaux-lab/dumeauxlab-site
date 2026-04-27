@@ -1103,7 +1103,7 @@ function SoftwarePage({ software = [] }) {
       <div className="section-pad" style={{ padding: "64px 40px 36px", borderBottom: `1px solid ${RULE}` }}>
         <div style={{ fontFamily: MONO, fontSize: 9.5, letterSpacing: 2.5, textTransform: "uppercase", color: WP, marginBottom: 14 }}>§ Software & tools</div>
         <h1 className="software-headline" style={{ fontFamily: DISPLAY, fontWeight: 900, fontSize: 60, letterSpacing: -0.8 }}>Tools we've built and <em style={{ color: WP }}>made public.</em></h1>
-        <p style={{ fontFamily: SANS, fontSize: 15, color: MUTED, marginTop: 16, maxWidth: 620, lineHeight: 1.6 }}>Open-source R packages, Python frameworks, and interactive web applications — built out of our research, available for anyone to use.</p>
+        <p style={{ fontFamily: SANS, fontSize: 15, color: MUTED, marginTop: 16, maxWidth: 620, lineHeight: 1.6 }}>Open-source R packages, Python frameworks, and interactive web applications.</p>
       </div>
       <div className="software-row section-pad" style={{ padding: "40px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
         {software.map((s, i) => (

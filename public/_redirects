@@ -35,6 +35,85 @@
 /software/mixt-app           /software/mixt     301
 # /software/mixt, /software/candescence, /software/microbiome2brain — already match.
 
+# ─── Old paper slugs → new paper slugs ──────────────────────────────────
+# Old Jekyll site used bare PMIDs (e.g. /papers/21917738) and underscored
+# camelCase slugs (e.g. /papers/ISS_clinical, /papers/biorxiv_pepin_2021).
+# New site uses pmid- prefix + lowercase, hyphen-separated slugs.
+# Listing every old slug explicitly — both original case and lowercase
+# variants where Google may have normalized.
+
+# Bare PMIDs → pmid-NNNN slug
+/papers/12767072    /papers/pmid-12767072/    301
+/papers/15298950    /papers/pmid-15298950/    301
+/papers/15986108    /papers/pmid-15986108/    301
+/papers/16229746    /papers/pmid-16229746/    301
+/papers/16648556    /papers/pmid-16648556/    301
+/papers/17372914    /papers/pmid-17372914/    301
+/papers/17644530    /papers/                  301
+/papers/18194511    /papers/pmid-18194511/    301
+/papers/18271962    /papers/pmid-18271962/    301
+/papers/18990736    /papers/pmid-18990736/    301
+/papers/19052061    /papers/pmid-19052061/    301
+/papers/19246570    /papers/pmid-19246570/    301
+/papers/19546881    /papers/pmid-19546881/    301
+/papers/19671031    /papers/pmid-19671031/    301
+/papers/19810099    /papers/pmid-19810099/    301
+/papers/19924816    /papers/pmid-19924816/    301
+/papers/20042636    /papers/pmid-20042636/    301
+/papers/20078854    /papers/pmid-20078854/    301
+/papers/20232395    /papers/pmid-20232395/    301
+/papers/20300640    /papers/pmid-20300640/    301
+/papers/20477359    /papers/pmid-20477359/    301
+/papers/20656628    /papers/pmid-20656628/    301
+/papers/20810604    /papers/pmid-20810604/    301
+/papers/21029790    /papers/pmid-21029790/    301
+/papers/21129856    /papers/pmid-21129856/    301
+/papers/21453500    /papers/pmid-21453500/    301
+/papers/21537385    /papers/pmid-21537385/    301
+/papers/21915359    /papers/pmid-21915359/    301
+/papers/21917738    /papers/pmid-21917738/    301
+/papers/23880221    /papers/pmid-23880221/    301
+/papers/24321460    /papers/pmid-24321460/    301
+/papers/24666820    /papers/pmid-24666820/    301
+/papers/24931809    /papers/pmid-24931809/    301
+/papers/25284793    /papers/pmid-25284793/    301
+/papers/28327201    /papers/pmid-28327201/    301
+/papers/28957325    /papers/pmid-28957325/    301
+/papers/30190545    /papers/pmid-30190545/    301
+/papers/30530734    /papers/pmid-30530734/    301
+/papers/31235750    /papers/pmid-31235750/    301
+/papers/31368035    /papers/pmid-31368035/    301
+
+# Old non-PMID paper slugs (underscored, camelCase) → new (hyphenated, lowercase)
+# /papers/walrus, /papers/walrus-biorxiv, /papers/acm, /papers/candescence-biorxiv — already match.
+/papers/606442.full                       /papers/606442-full/                  301
+/papers/epi_inheritance                   /papers/epi-inheritance/              301
+/papers/scCandida-biorxiv                 /papers/sccandida-biorxiv/            301
+/papers/sccandida-biorxiv                 /papers/sccandida-biorxiv/            301
+/papers/hdac_trophoblast                  /papers/hdac-trophoblast/             301
+/papers/atrx_cellReports                  /papers/atrx-cellreports/             301
+/papers/atrx_cellreports                  /papers/atrx-cellreports/             301
+/papers/reef_microbiome                   /papers/reef-microbiome/              301
+/papers/folate_epi_inheritance            /papers/folate-epi-inheritance/       301
+/papers/epi_starProtocol                  /papers/epi-starprotocol/             301
+/papers/epi_starprotocol                  /papers/epi-starprotocol/             301
+/papers/refpop_cellReports                /papers/refpop-cellreports/           301
+/papers/refpop_cellreports                /papers/refpop-cellreports/           301
+/papers/biorxiv_pepin_2021                /papers/biorxiv-pepin-2021/           301
+/papers/highfat_h3k4me3_pepin             /papers/highfat-h3k4me3-pepin/        301
+/papers/epigenetics_ddt_biorxiv_2022      /papers/epigenetics-ddt-biorxiv-2022/ 301
+/papers/candescence_asm2022               /papers/candescence-asm2022/          301
+/papers/sc-candida_elife_2023             /papers/sc-candida-elife-2023/        301
+/papers/elife_pepin_2024                  /papers/elife-pepin-2024/             301
+/papers/ISS_clinical                      /papers/iss-clinical/                 301
+/papers/iss_clinical                      /papers/iss-clinical/                 301
+/papers/ISS_transcriptomics               /papers/iss-transcriptomics/          301
+/papers/iss_transcriptomics               /papers/iss-transcriptomics/          301
+/papers/deep-fMC_biorxiv2025              /papers/deep-fmc-biorxiv2025/         301
+/papers/deep-fmc_biorxiv2025              /papers/deep-fmc-biorxiv2025/         301
+/papers/preffect_biorxiv2025              /papers/preffect-biorxiv2025/         301
+/papers/dcis_dna_medrxiv2025              /papers/dcis-dna-medrxiv2025/         301
+
 # ─── Blog posts → News posts (with anchor for in-page jump) ──────────────
 /blog/hello-world                                /news                                       301
 /blog/Systems-Genetics-Workshop                  /news#systems-genetics-workshop-2018        301

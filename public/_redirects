@@ -14,12 +14,16 @@
 /archive/         /news        301
 /categories       /news        301
 /categories/      /news        301
+/categories/*     /news        301
 /tags             /news        301
 /tags/            /news        301
+/tags/*           /news        301
 /pages            /news        301
 /pages/           /news        301
 /misc             /            301
 /misc/            /            301
+# Conventional sitemap path → our actual sitemap index.
+/sitemap.xml      /sitemap-index.xml   301
 # /contact, /papers, /research, /software, /team — slugs unchanged, no rule needed.
 
 # ─── Old Jekyll team page → PI page or team page ─────────────────────────

@@ -297,7 +297,7 @@ instead of cropped) — see the `CONTAIN_KEYS` set in the script.
 
 ```bash
 # 1. Drop the new full-res image into the SIBLING assets dir
-#    (the script reads from ~/Downloads/dumeauxlab/assets/, not public/)
+#    (the script reads from the sibling `assets/` dir, not from public/)
 cp ~/Downloads/conf-poster.jpg ../assets/conf-poster-2026.jpg
 
 # 2. Add the filename to the NAMES array in scripts/regen-news-images.mjs

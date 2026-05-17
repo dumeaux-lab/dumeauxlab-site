@@ -1,9 +1,12 @@
 import sharp from "sharp";
 import fs from "node:fs/promises";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
-const DIR = "/Users/vanessadumeaux/Downloads/dumeauxlab/astro-site/public/assets/team";
-const OUT = "/Users/vanessadumeaux/Downloads/dumeauxlab/astro-site/src/data/team-photos.js";
+// Resolve paths relative to this script so the repo is portable.
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const DIR = path.resolve(__dirname, "../public/assets/team");
+const OUT = path.resolve(__dirname, "../src/data/team-photos.js");
 const KEYS = ["ajita","akshay","alice","ankit","arad","athena","aybars","binh","bushra","dalwinder","eliseos","emily","erin","evelyn","karen","lakni","mohamed","monica","nabeeha","noor","qianrui","rachel","rishi","rohan","sara","teddy","vanessa","yubing"];
 const TARGET = 440;
 

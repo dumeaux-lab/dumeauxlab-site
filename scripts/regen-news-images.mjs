@@ -1,11 +1,16 @@
 import sharp from "sharp";
 import fs from "node:fs/promises";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
-// Sources sit in the sibling repo's flat assets dir. The 10 names below match
-// the keys currently referenced from news markdown frontmatter / blocks.
-const SRC_DIR = "/Users/vanessadumeaux/Downloads/dumeauxlab/assets";
-const OUT     = "/Users/vanessadumeaux/Downloads/dumeauxlab/astro-site/src/data/news-images.js";
+// Resolve paths relative to this script so the repo is portable.
+// Sources sit in a sibling `assets/` dir alongside the astro-site repo:
+//   <parent>/
+//     ├── astro-site/        ← this repo
+//     └── assets/            ← flat dir of high-res sources
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const SRC_DIR = path.resolve(__dirname, "../../assets");
+const OUT     = path.resolve(__dirname, "../src/data/news-images.js");
 
 // Max long-edge in px. The news column is ~700px wide, so 1400 keeps things
 // crisp at 2× DPR without ballooning the inlined JS payload.

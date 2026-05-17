@@ -7,7 +7,7 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIR = path.resolve(__dirname, "../public/assets/team");
 const OUT = path.resolve(__dirname, "../src/data/team-photos.js");
-const KEYS = ["ajita","akshay","alice","ankit","arad","athena","aybars","binh","bushra","dalwinder","eliseos","emily","erin","evelyn","karen","lakni","mohamed","monica","nabeeha","noor","qianrui","rachel","rishi","rohan","sara","teddy","vanessa","yubing"];
+const KEYS = ["ajita","akshay","alice","ankit","arad","athena","aybars","binh","bushra","dalwinder","eliseos","emily","erin","evelyn","karen","lakni","mohamed","monica","nabeeha","noor","qianrui","rachel","rishi","rohan","sara","shreya","teddy","vanessa","yubing"];
 const TARGET = 440;
 
 async function findSource(key) {

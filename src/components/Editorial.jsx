@@ -608,21 +608,25 @@ function PIPage() {
         <div style={{ fontFamily: MONO, fontSize: 9.5, letterSpacing: 2, textTransform: "uppercase", color: WP }}>Invited talks</div>
         <div>
           {[
-          { year: "2026", venue: "SciLifeLab, KTH Royal Institute of Technology, Stockholm, Sweden", title: "Peripheral immunity, microbial communities, and the power of single-cell resolution" },
-          { year: "2026", venue: "Systems Biology Workshop, McGill-Bellairs Research Institute, Holetown, Barbados", title: "Insights from tumor genomics and systemic immunity for personalized breast cancer management" },
+          { year: "2026", venue: "SciLifeLab, KTH Royal Institute of Technology, Stockholm, Sweden", title: "Peripheral immunity, microbial communities, and the power of single-cell resolution", url: "https://www.scilifelab.se/event/peripheral-immunity-microbial-communities-and-the-power-of-single-cell-resolution/" },
+          { year: "2026", venue: "Systems Biology Workshop, McGill-Bellairs Research Institute, Holetown, Barbados", title: "Insights from tumor genomics and systemic immunity for personalized breast cancer management", url: "https://mikehallett.science/" },
           { year: "2025", venue: "CanFunNet (virtual, plenary)", title: "Characterization of transcriptional programs supporting drug tolerance in Candida albicans" },
           { year: "2025", venue: "Memorial Sloan Kettering Cancer Center, New York", title: "Insights from tumor genomics and systemic immunity for personalized breast cancer management" },
-          { year: "2025", venue: "Microbiome Virtual International Forum", title: "Functional archetypes in the human gut microbiome reveal metabolic diversity, stability, and confound disease-associated signatures" },
-          { year: "2025", venue: "Systems Biology Workshop, McGill-Bellairs Research Institute, Holetown, Barbados", title: "Delineating Functional Patterns in Global Gut Microbiomes with Archetypal Deep Learning Analysis" },
-          { year: "2024", venue: "Stanford Cancer Biology Seminar Series", title: "From Genes to Microbes: Multidimensional Approaches for Predicting Breast Cancer Therapy Responses" },
-          { year: "2024", venue: "Having IMPACTT symposium, Canmore AB", title: "Unraveling the functionality of microbiomes with novel computational and single-cell profiling approaches" },
+          { year: "2025", venue: "Microbiome Virtual International Forum", title: "Functional archetypes in the human gut microbiome reveal metabolic diversity, stability, and confound disease-associated signatures", url: "https://www.youtube.com/watch?v=C_aYoAG1KEo&list=PLLOHGJKpTq6q4coLSvMhxu4Kjquylu-Lt&index=6" },
+          { year: "2025", venue: "Systems Biology Workshop, McGill-Bellairs Research Institute, Holetown, Barbados", title: "Delineating Functional Patterns in Global Gut Microbiomes with Archetypal Deep Learning Analysis", url: "https://mikehallett.science/" },
+          { year: "2024", venue: "Stanford Cancer Biology Seminar Series", title: "From Genes to Microbes: Multidimensional Approaches for Predicting Breast Cancer Therapy Responses", url: "https://med.stanford.edu/cancerbiology/events/SeminarSeries.html#2023-24" },
+          { year: "2024", venue: "Having IMPACTT symposium, Canmore AB", title: "Unraveling the functionality of microbiomes with novel computational and single-cell profiling approaches", url: "https://www.impactt-microbiome.ca/impactt-symposium-2024-abstracts/#vanessa-dumeaux" },
           { year: "2023", venue: "Schulich New Faculty Lecture Series, London", title: "Single-Cell Profiling of Systemic Immunity and Gut Microbiome: A Path to Better Understanding Human Health and Disease" },
           { year: "2022", venue: "Oncology Grand Rounds, London", title: "Approaches to predictive breast cancer biomarker panels that integrate the tumor microenvironment and the patient systemic response" }].
           map((l, i) =>
           <div key={i} style={{ padding: "10px 0", borderTop: `1px solid ${RULE}`, display: "grid", gridTemplateColumns: "60px 1fr", gap: 16 }}>
               <div style={{ fontFamily: MONO, fontSize: 10.5, color: WP }}>{l.year}</div>
               <div>
-                <div style={{ fontSize: 14, lineHeight: 1.35 }}>{l.title}</div>
+                <div style={{ fontSize: 14, lineHeight: 1.35 }}>
+                  {l.url
+                    ? <a href={l.url} target="_blank" rel="noopener noreferrer" style={{ color: INK, textDecoration: "none", borderBottom: `1px solid ${WO}` }}>{l.title}</a>
+                    : l.title}
+                </div>
                 <div style={{ fontSize: 11.5, color: MUTED, marginTop: 3, fontStyle: "italic" }}>{l.venue}</div>
               </div>
             </div>

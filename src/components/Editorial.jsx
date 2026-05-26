@@ -88,7 +88,7 @@ function Nav({ active }) {
       </div>
       {/* Center — nav */}
       <div className="nav-center" style={{ display: "flex", gap: 28 }}>
-        {[["Home", "home", "/"], ["Research", "research", "/research"], ["The Lab", "people", "/team"], ["Papers", "papers", "/papers"], ["Software", "software", "/software"], ["News", "news", "/news"], ["Contact", "contact", "/contact"]].map(([label, key, href]) =>
+        {[["Home", "home", "/"], ["Research", "research", "/research/"], ["The Lab", "people", "/team/"], ["Papers", "papers", "/papers/"], ["Software", "software", "/software/"], ["News", "news", "/news/"], ["Contact", "contact", "/contact/"]].map(([label, key, href]) =>
         <a key={key} href={href}
         style={{ textDecoration: "none", cursor: "pointer", fontFamily: SANS, fontSize: 13, fontWeight: key === active.toLowerCase() ? 600 : 400,
           color: key === active.toLowerCase() ? WP : INK, borderBottom: key === active.toLowerCase() ? `2px solid ${WP}` : "none", paddingBottom: 2 }}>
@@ -339,7 +339,7 @@ function HomePage({ tw, recentPapers = [], software = [], news = [] }) {
         </div>
         <div className="pillar-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 32 }}>
           {PILLARS.map((p, i) =>
-          <a key={p.id} href={`/research/${p.id}`} style={{ borderTop: `2px solid ${i === 0 ? WP : RULE}`, paddingTop: 18, minWidth: 0, display: "block", textDecoration: "none", color: "inherit" }}>
+          <a key={p.id} href={`/research/${p.id}/`} style={{ borderTop: `2px solid ${i === 0 ? WP : RULE}`, paddingTop: 18, minWidth: 0, display: "block", textDecoration: "none", color: "inherit" }}>
               <div style={{ fontFamily: MONO, fontSize: 10, color: WP, marginBottom: 10, letterSpacing: 0.5 }}>{p.num} / 03</div>
               <div style={{ fontFamily: DISPLAY, fontSize: 26, fontWeight: 800, lineHeight: 1.1, marginBottom: 8 }}>{p.title}</div>
               <div style={{ fontFamily: SANS, fontSize: 11, letterSpacing: 0.5, textTransform: "uppercase", color: WP, marginBottom: 16 }}>{p.subtitle}</div>
@@ -361,7 +361,7 @@ function HomePage({ tw, recentPapers = [], software = [], news = [] }) {
             <span onClick={() => window.location.href = "/papers"} style={{ fontFamily: MONO, fontSize: 11, color: WP, cursor: "pointer" }}>All papers →</span>
           </div>
           {recentPapers.slice(0, 4).map((p, i) =>
-          <a key={p.slug || i} href={p.slug ? `/papers/${p.slug}` : "/papers"}
+          <a key={p.slug || i} href={p.slug ? `/papers/${p.slug}/` : "/papers/"}
              style={{ padding: "14px 0", borderTop: `1px solid ${RULE}`, display: "grid", gridTemplateColumns: "52px 1fr auto", gap: 16, alignItems: "start", textDecoration: "none", color: INK }}>
               <div style={{ fontFamily: MONO, fontSize: 12, color: WP, fontWeight: 500 }}>{p.year}</div>
               <div>
@@ -378,7 +378,7 @@ function HomePage({ tw, recentPapers = [], software = [], news = [] }) {
             <span onClick={() => window.location.href = "/software"} style={{ fontFamily: MONO, fontSize: 11, color: WP, cursor: "pointer" }}>All →</span>
           </div>
           {software.slice(0, 5).map((s, i) =>
-          <a key={s.slug || i} href={s.slug ? `/software/${s.slug}` : "/software"}
+          <a key={s.slug || i} href={s.slug ? `/software/${s.slug}/` : "/software/"}
              style={{ padding: "10px 0", borderTop: `1px solid ${RULE}`, display: "block", textDecoration: "none", color: INK }}>
               <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 3 }}>
                 <span style={{ fontFamily: MONO, fontSize: 12, color: WD, fontWeight: 500 }}>{s.name}</span>
@@ -398,7 +398,7 @@ function HomePage({ tw, recentPapers = [], software = [], news = [] }) {
             <span style={{ fontFamily: MONO, fontSize: 11, color: WP, cursor: "pointer" }}>All news →</span>
           </div>
           {news.map((n, i) =>
-          <a key={n.slug || i} href={n.slug ? `/news#${n.slug}` : "/news"}
+          <a key={n.slug || i} href={n.slug ? `/news/#${n.slug}` : "/news/"}
              style={{ padding: "12px 0", borderTop: `1px solid ${RULE}`, display: "block", textDecoration: "none", color: INK }}>
               <div style={{ display: "flex", gap: 10, alignItems: "center", marginBottom: 4 }}>
                 <span style={{ fontFamily: MONO, fontSize: 9, color: WG, letterSpacing: 0.5 }}>{n.date}</span>
@@ -438,7 +438,7 @@ function ResearchPage() {
           <div className="split-3" style={{ display: "grid", gridTemplateColumns: "1fr 2fr 1fr", gap: 48, alignItems: "start" }}>
             <div>
               <div style={{ fontFamily: MONO, fontSize: 11, color: WP, marginBottom: 10, letterSpacing: 1 }}>{p.num} / 03</div>
-              <a href={`/research/${p.id}`} style={{ color: INK, textDecoration: "none" }}>
+              <a href={`/research/${p.id}/`} style={{ color: INK, textDecoration: "none" }}>
                 <div style={{ fontFamily: DISPLAY, fontSize: 32, fontWeight: 800, lineHeight: 1.05 }}>{p.title}</div>
               </a>
               <div style={{ marginTop: 20, display: "flex", flexWrap: "wrap", gap: 6 }}>
@@ -451,7 +451,7 @@ function ResearchPage() {
                 Methods — {p.methods.join(" · ")}
               </div>
               <div style={{ marginTop: 20, display: "flex", gap: 10 }}>
-                <a href={`/research/${p.id}`} style={{ background: WP, color: "#fff", border: "none", padding: "9px 18px", fontFamily: SANS, fontSize: 12, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>Read full programme →</a>
+                <a href={`/research/${p.id}/`} style={{ background: WP, color: "#fff", border: "none", padding: "9px 18px", fontFamily: SANS, fontSize: 12, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>Read full programme →</a>
               </div>
             </div>
             <div style={{ background: BG3, padding: 14 }}>
@@ -996,7 +996,7 @@ function PapersPage({ papers = [] }) {
             <div style={{ fontFamily: DISPLAY, fontSize: 36, fontWeight: 900, color: WP, letterSpacing: -0.5, lineHeight: 1 }}>{year}</div>
             <div>
               {filtered.filter((p) => p.year === year).map((p, i) => {
-              const href = p.slug ? `/papers/${p.slug}` : null;
+              const href = p.slug ? `/papers/${p.slug}/` : null;
               return (
                 <div key={p.slug || i} style={{ padding: "14px 0", borderBottom: `1px solid ${RULE}` }}>
                     <div style={{ fontFamily: SANS, fontSize: 15.5, lineHeight: 1.35, marginBottom: 4, fontWeight: 500 }}>
@@ -1035,7 +1035,7 @@ function PapersPage({ papers = [] }) {
 // ─── Software detail page ─────────────────────────────────────────────────────
 function SoftwareDetailPage({ tool }) {
   const s = tool;
-  if (!s) return <div style={{ background: BG }}><Nav active="Software" /><div style={{ padding: "64px 40px" }}><a href="/software" style={{ fontFamily: MONO, fontSize: 10, color: WP, textDecoration: "none" }}>← Software</a></div></div>;
+  if (!s) return <div style={{ background: BG }}><Nav active="Software" /><div style={{ padding: "64px 40px" }}><a href="/software/" style={{ fontFamily: MONO, fontSize: 10, color: WP, textDecoration: "none" }}>← Software</a></div></div>;
   return (
     <div style={{ background: BG, color: INK }}>
       <Nav active="Software" />
@@ -1109,7 +1109,7 @@ function SoftwarePage({ software = [] }) {
         {software.map((s, i) => (
           <div key={s.slug || i} style={{ background: BG2, padding: "24px 24px 20px", borderTop: `3px solid ${WP}` }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 8 }}>
-              <a href={`/software/${s.slug}`} style={{ fontFamily: MONO, fontSize: 17, color: WD, fontWeight: 500, textDecoration: "none" }}>{s.name}</a>
+              <a href={`/software/${s.slug}/`} style={{ fontFamily: MONO, fontSize: 17, color: WD, fontWeight: 500, textDecoration: "none" }}>{s.name}</a>
               <div style={{ fontFamily: MONO, fontSize: 9.5, color: WG }}>{s.year}</div>
             </div>
             <div style={{ fontFamily: MONO, fontSize: 9.5, letterSpacing: 0.5, textTransform: "uppercase", color: WP, marginBottom: 10, display: "inline-block", border: `1px solid ${WO}`, padding: "2px 8px" }}>{s.tag}</div>
@@ -1118,7 +1118,7 @@ function SoftwarePage({ software = [] }) {
               {s.github && <a href={s.github} target="_blank" rel="noopener noreferrer" style={{ color: WP, textDecoration: "none" }}>GitHub ↗</a>}
               {s.www && <><span style={{ color: RULE }}>·</span><a href={s.www} target="_blank" rel="noopener noreferrer" style={{ color: WP, textDecoration: "none" }}>Demo ↗</a></>}
               <span style={{ color: RULE }}>·</span>
-              <a href={`/software/${s.slug}`} style={{ color: WP, textDecoration: "none" }}>Details →</a>
+              <a href={`/software/${s.slug}/`} style={{ color: WP, textDecoration: "none" }}>Details →</a>
             </div>
           </div>
         ))}

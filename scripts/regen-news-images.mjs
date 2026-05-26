@@ -38,6 +38,10 @@ const NAMES = [
   "bbd-modelsystems-group2020.jpg", // 2020 BBD group photo
   "IMPACTT_conf_poster2021.jpg",  // 2021 IMPACTT poster
   "ca_epi_conf_2021.jpeg",        // 2021 Canadian Epigenetics flyer
+  // Spring 2026 update post
+  "lhrd-2026.jpg",                // 4 students at London Health Research Day
+  "megabike-2026-group.jpg",      // BCC Megabike Day — lab in front of the bike
+  "megabike-2026-selfie.jpg",     // BCC Megabike Day — selfie on the bike
 ];
 
 // Logos/diagrams want to keep transparency → PNG.

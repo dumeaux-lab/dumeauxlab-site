@@ -1,0 +1,40 @@
+---
+date: "2026-05-26"
+title: "Spring 2026 — LHRD, BCC Megabike Day, and Paula Gordon at Oncology Grand Rounds"
+excerpt: "A busy spring of trainee presentations, fundraising for breast cancer research, and a visit from a national advocate for early detection."
+tag: "Lab news"
+blocks:
+  - type: "h2"
+    text: "London Health Research Day"
+  - type: "p"
+    text: "On April 29, four trainees from the lab presented at [London Health Research Day](https://www.schulich.uwo.ca/gradstudies/current-students/london-health-research-day/index.html), the annual Schulich-wide graduate research showcase."
+  - type: "ul"
+    items:
+      - "**Yubing Xia** — selected talk: *Systemic B-cell Immune States Associate with Response to Neoadjuvant Therapy in HER2-Positive Breast Cancer*"
+      - "**Binh Tran** — poster: *Novel Transcriptional Profiling Approach to Study Para-Resistance in Candida albicans*"
+      - "**Mohamed Meawad** — poster: *Delineating Functional Patterns in Global Gut Microbiomes*"
+      - "**Bushra Kabbani** — poster: *Systemic–Tumour Immune Response to Neoadjuvant Chemo-Immunotherapy in Triple-Negative Breast Cancer*"
+  - type: "img"
+    src: "lhrd-2026.jpg"
+    caption: "Binh, Mohamed, Bushra and Yubing at London Health Research Day, April 2026"
+  - type: "h2"
+    text: "Welcoming a new summer trainee"
+  - type: "p"
+    text: "Welcome to Shreya Parmar, joining us this summer as a Canadian Organization for Undergraduate Health Research (COUHR) trainee. Shreya will work with Binh on novel genomics approaches to functionally profile complex microbial communities."
+  - type: "h2"
+    text: "Riding for Breast Cancer Research — BCC Megabike Day"
+  - type: "p"
+    text: "On May 26, members of the lab joined [Breast Cancer Canada's Megabike Day](https://www.breastcancerprogress.ca/), where 29 riders take to the streets on a giant 30-foot bike to raise critical funds for breast cancer research and care. Funds raised locally support the Translational Breast Cancer Research Unit at Western — including our own work on systemic immunity in breast cancer."
+  - type: "grid"
+    images:
+      - { src: "megabike-2026-group.jpg", caption: "" }
+      - { src: "megabike-2026-selfie.jpg", caption: "" }
+  - type: "h2"
+    text: "Outreach — Paula Gordon at Oncology Grand Rounds"
+  - type: "p"
+    text: "On May 26, we welcomed Dr. Paula Gordon — breast radiologist and Clinical Professor of Radiology at UBC — as a virtual speaker for Oncology Grand Rounds. Her talk, *Breast Cancer Update: The basics, early detection, and the important role of breast density*, covered the modifiable and non-modifiable risks of breast cancer, the case for early detection, and what's available to women in Ontario."
+  - type: "p"
+    text: "Dr. Gordon was a pioneer in breast ultrasound and is widely recognized for her advocacy work that has changed how women with dense breasts are screened in the USA, Canada, the UK, and beyond. She volunteers as Medical Advisor to [DenseBreastsCanada.ca](https://densebreastscanada.ca/) and [DenseBreast-Info.org](https://densebreast-info.org/), and is an Officer of the Order of Canada."
+  - type: "p"
+    text: "Many thanks to our patient partner for suggesting Dr. Gordon as a speaker — exactly the kind of bridge between research and lived experience we hope to build more of."
+---

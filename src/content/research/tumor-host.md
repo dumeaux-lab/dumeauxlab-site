@@ -26,9 +26,9 @@ Taken together with information about a patient's exposures and lifestyle, these
 
 Ductal carcinoma in situ (DCIS) is a non-obligate precursor to invasive breast cancer. Most patients are treated with surgery and adjuvant radiotherapy (RT), yet the absolute benefit of RT for an individual patient is highly variable: some are over-treated for disease that would never have recurred, others develop invasive recurrence despite standard care. Better molecular risk stratification is needed both to *de-escalate* therapy in low-risk disease and to *identify* RT-resistant lesions that would benefit from alternative management.
 
-Through whole-exome sequencing of pure DCIS FFPE specimens, we are characterizing the mutational and copy-number landscape of the disease and identifying [genetic correlates of 10-year local recurrence and radiotherapy response](/papers/dcis-dna-medrxiv2025). This work is part of a large multi-institutional DCIS cohort programme conducted in collaboration with Sunnybrook Health Sciences Centre (Toronto).
+Through whole-exome sequencing of pure DCIS FFPE specimens, we are characterizing the mutational and copy-number landscape of the disease and identifying [genetic correlates of 10-year local recurrence and radiotherapy response](/papers/dcis-dna-medrxiv2025/). This work is part of a large multi-institutional DCIS cohort programme conducted in collaboration with Sunnybrook Health Sciences Centre (Toronto).
 
-A complementary methodological strand, developed jointly with [Michael Hallett](https://mikehallett.science) (Western), tackles the technical bottleneck that makes this work hard: FFPE-derived RNA-seq is sparse, degraded, and prone to extreme transcript dropout. We introduced [generative and integrative modelling approaches](/papers/preffect-biorxiv2025) that fit probabilistic distributions to FFPE expression counts, exploit matched-tissue profiles from the same patient, and use graph-attention over sample-sample adjacency networks to stabilize and impute missing values. These methods support ongoing development of RNA-based classifiers for invasive local recurrence and RT response on archival material that was previously considered too degraded to use.
+A complementary methodological strand, developed jointly with [Michael Hallett](https://mikehallett.science) (Western), tackles the technical bottleneck that makes this work hard: FFPE-derived RNA-seq is sparse, degraded, and prone to extreme transcript dropout. We introduced [generative and integrative modelling approaches](/papers/preffect-biorxiv2025/) that fit probabilistic distributions to FFPE expression counts, exploit matched-tissue profiles from the same patient, and use graph-attention over sample-sample adjacency networks to stabilize and impute missing values. These methods support ongoing development of RNA-based classifiers for invasive local recurrence and RT response on archival material that was previously considered too degraded to use.
 
 ## Completed projects
 
@@ -42,16 +42,16 @@ In earlier work, we showed that blood-based signatures could be used to develop 
 
 ## Selected papers
 
-- [Mutational landscape of pure ductal carcinoma in situ and associations with disease prognosis and response to radiotherapy](/papers/dcis-dna-medrxiv2025)
-- [Generative and integrative modeling for transcriptomics with formalin-fixed paraffin-embedded material](/papers/preffect-biorxiv2025)
-- [Interactions between the tumor and the blood systemic response of breast cancer patients](/papers/pmid-28957325)
-- [The prognostic ease and difficulty of invasive breast carcinoma](/papers/pmid-25284793)
-- [Peripheral blood cells inform on the presence of breast cancer: a population-based case-control study](/papers/pmid-24931809)
+- [Mutational landscape of pure ductal carcinoma in situ and associations with disease prognosis and response to radiotherapy](/papers/dcis-dna-medrxiv2025/)
+- [Generative and integrative modeling for transcriptomics with formalin-fixed paraffin-embedded material](/papers/preffect-biorxiv2025/)
+- [Interactions between the tumor and the blood systemic response of breast cancer patients](/papers/pmid-28957325/)
+- [The prognostic ease and difficulty of invasive breast carcinoma](/papers/pmid-25284793/)
+- [Peripheral blood cells inform on the presence of breast cancer: a population-based case-control study](/papers/pmid-24931809/)
 
 ## Selected software
 
-- [MIxT](/software/mixt) — system for exploring and comparing transcriptional profiles from two or more matched tissues across individuals.
-- [PREFFECT](/software/preffect) — generative and integrative modeling for FFPE transcriptomics.
+- [MIxT](/software/mixt/) — system for exploring and comparing transcriptional profiles from two or more matched tissues across individuals.
+- [PREFFECT](/software/preffect/) — generative and integrative modeling for FFPE transcriptomics.
 
 ## Linked websites
 

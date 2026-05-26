@@ -279,8 +279,8 @@ function HomePage({ tw, recentPapers = [], software = [], news = [] }) {
           </h1>
           <p className="hero-blurb" style={{ fontFamily: SANS, fontSize: 16, lineHeight: 1.65, color: MUTED, marginTop: 22, maxWidth: 620 }}>Our lab applies single-cell and computational genomics to two main questions: how a patient's immune system interacts with their breast tumor, and how function varies within human microbial communities such as the gut microbiome and fungal pathogens.</p>
           <div style={{ display: "flex", gap: 12, marginTop: 32, flexWrap: "wrap" }}>
-            <button onClick={() => window.location.href = "/research"} style={{ background: WP, color: "#fff", border: "none", padding: "13px 24px", fontFamily: SANS, fontSize: 13, fontWeight: 600, cursor: "pointer", letterSpacing: 0.2 }}>Read our research →</button>
-            <button onClick={() => window.location.href = "/team"} style={{ background: "none", color: INK, border: `1.5px solid ${INK}`, padding: "13px 24px", fontFamily: SANS, fontSize: 13, fontWeight: 500, cursor: "pointer" }}>Meet the team</button>
+            <button onClick={() => window.location.href = "/research/"} style={{ background: WP, color: "#fff", border: "none", padding: "13px 24px", fontFamily: SANS, fontSize: 13, fontWeight: 600, cursor: "pointer", letterSpacing: 0.2 }}>Read our research →</button>
+            <button onClick={() => window.location.href = "/team/"} style={{ background: "none", color: INK, border: `1.5px solid ${INK}`, padding: "13px 24px", fontFamily: SANS, fontSize: 13, fontWeight: 500, cursor: "pointer" }}>Meet the team</button>
           </div>
           <div style={{ marginTop: 40, display: "flex", flexDirection: "column", gap: 4 }}>
             <div style={{ fontFamily: MONO, fontSize: 9.5, letterSpacing: 2, textTransform: "uppercase", color: WG }}>Schulich School of Medicine & Dentistry</div>
@@ -335,7 +335,7 @@ function HomePage({ tw, recentPapers = [], software = [], news = [] }) {
       <div className="research-band section-pad" style={{ padding: "64px 40px", borderBottom: `1px solid ${RULE}` }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 36 }}>
           <div style={{ fontFamily: MONO, fontSize: 9.5, letterSpacing: 2.5, textTransform: "uppercase", color: WP }}>§ RESEACH</div>
-          <span onClick={() => window.location.href = "/research"} style={{ fontFamily: MONO, fontSize: 11, color: WP, cursor: "pointer", letterSpacing: 0.5 }}>All research →</span>
+          <span onClick={() => window.location.href = "/research/"} style={{ fontFamily: MONO, fontSize: 11, color: WP, cursor: "pointer", letterSpacing: 0.5 }}>All research →</span>
         </div>
         <div className="pillar-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 32 }}>
           {PILLARS.map((p, i) =>
@@ -358,7 +358,7 @@ function HomePage({ tw, recentPapers = [], software = [], news = [] }) {
         <div>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 20 }}>
             <h2 style={{ fontFamily: DISPLAY, fontSize: 28, fontWeight: 800 }}>Recent publications</h2>
-            <span onClick={() => window.location.href = "/papers"} style={{ fontFamily: MONO, fontSize: 11, color: WP, cursor: "pointer" }}>All papers →</span>
+            <span onClick={() => window.location.href = "/papers/"} style={{ fontFamily: MONO, fontSize: 11, color: WP, cursor: "pointer" }}>All papers →</span>
           </div>
           {recentPapers.slice(0, 4).map((p, i) =>
           <a key={p.slug || i} href={p.slug ? `/papers/${p.slug}/` : "/papers/"}
@@ -375,7 +375,7 @@ function HomePage({ tw, recentPapers = [], software = [], news = [] }) {
         <div>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 20 }}>
             <h2 style={{ fontFamily: DISPLAY, fontSize: 22, fontWeight: 800 }}>Software & tools</h2>
-            <span onClick={() => window.location.href = "/software"} style={{ fontFamily: MONO, fontSize: 11, color: WP, cursor: "pointer" }}>All →</span>
+            <span onClick={() => window.location.href = "/software/"} style={{ fontFamily: MONO, fontSize: 11, color: WP, cursor: "pointer" }}>All →</span>
           </div>
           {software.slice(0, 5).map((s, i) =>
           <a key={s.slug || i} href={s.slug ? `/software/${s.slug}/` : "/software/"}
@@ -501,7 +501,7 @@ function PIPage() {
       <Nav active="people" />
       {/* Back */}
       <div className="section-pad" style={{ padding: "16px 40px", borderBottom: `1px solid ${RULE}` }}>
-        <span onClick={() => window.location.href = "/team"} style={{ fontFamily: MONO, fontSize: 10, letterSpacing: 1, color: WP, cursor: "pointer" }}>← The Lab</span>
+        <span onClick={() => window.location.href = "/team/"} style={{ fontFamily: MONO, fontSize: 10, letterSpacing: 1, color: WP, cursor: "pointer" }}>← The Lab</span>
       </div>
       {/* Hero */}
       <div className="pi-hero section-pad" style={{ padding: "48px 40px", borderBottom: `1px solid ${RULE}`, display: "grid", gridTemplateColumns: "220px 1fr", gap: 48 }}>
@@ -708,7 +708,7 @@ function PeoplePage({ team = [] }) {
       </div>
 
       {/* PI */}
-      <div onClick={() => window.location.href = "/pi"} className="pi-card-row" style={{ padding: "32px 40px", borderBottom: `1px solid ${RULE}`, display: "grid", gridTemplateColumns: "72px 1fr", gap: 24, alignItems: "start", background: BG2, cursor: "pointer" }}>
+      <div onClick={() => window.location.href = "/pi/"} className="pi-card-row" style={{ padding: "32px 40px", borderBottom: `1px solid ${RULE}`, display: "grid", gridTemplateColumns: "72px 1fr", gap: 24, alignItems: "start", background: BG2, cursor: "pointer" }}>
         <img src={TEAM_PHOTOS["vanessa"]} style={{ width: 72, height: 72, borderRadius: "50%", objectFit: "cover", objectPosition: "center top" }} />
         <div>
           <div style={{ display: "flex", alignItems: "baseline", gap: 12, marginBottom: 6 }}>
@@ -1040,7 +1040,7 @@ function SoftwareDetailPage({ tool }) {
     <div style={{ background: BG, color: INK }}>
       <Nav active="Software" />
       <div style={{ padding: "16px 40px", borderBottom: `1px solid ${RULE}` }}>
-        <span onClick={() => window.location.href = "/software"} style={{ fontFamily: MONO, fontSize: 10, letterSpacing: 1, color: WP, cursor: "pointer" }}>← Software & tools</span>
+        <span onClick={() => window.location.href = "/software/"} style={{ fontFamily: MONO, fontSize: 10, letterSpacing: 1, color: WP, cursor: "pointer" }}>← Software & tools</span>
       </div>
       <div className="section-pad" style={{ padding: "56px 40px 40px", borderBottom: `1px solid ${RULE}` }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 10 }}>

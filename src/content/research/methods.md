@@ -19,22 +19,22 @@ Critical to these efforts is the development of computational methodologies that
 - predicting molecular pathway activation patient-by-patient under the constraints clinical practice imposes;
 - and additional methodologies within collaborative manuscripts (Huttenhower et al., 2009 *Genome Research*; Barutcuoglu et al., 2009 *Bioinformatics*; Bettauer et al., 2022 *Microbiology Spectrum*).
 
-More recently, we have extended this methodological program in two directions: FFPE-grade transcriptomics, through [PREFFECT](/software/preffect), and microbial functional archetypes, through [deep-fMC](/software/deep-fmc). Both are settings where a lot is technically measurable but relatively little is yet clinically actionable, and that gap is what pushed us to build new tools.
+More recently, we have extended this methodological program in two directions: FFPE-grade transcriptomics, through [PREFFECT](/software/preffect/), and microbial functional archetypes, through [deep-fMC](/software/deep-fmc/). Both are settings where a lot is technically measurable but relatively little is yet clinically actionable, and that gap is what pushed us to build new tools.
 
 ## Selected papers
 
-- [Generative and integrative modeling for transcriptomics with formalin-fixed paraffin-embedded material](/papers/preffect-biorxiv2025)
-- [Detecting gene-signature activation in breast cancer in an absolute, single-patient manner](/papers/pmid-28327201)
-- [Building applications for interactive data exploration in systems biology](/papers/acm)
-- [A deep learning approach to capture the essence of *Candida albicans* morphologies](/papers/candescence-asm2022)
-- [Reproducible data analysis pipelines for precision medicine](/papers/walrus)
+- [Generative and integrative modeling for transcriptomics with formalin-fixed paraffin-embedded material](/papers/preffect-biorxiv2025/)
+- [Detecting gene-signature activation in breast cancer in an absolute, single-patient manner](/papers/pmid-28327201/)
+- [Building applications for interactive data exploration in systems biology](/papers/acm/)
+- [A deep learning approach to capture the essence of *Candida albicans* morphologies](/papers/candescence-asm2022/)
+- [Reproducible data analysis pipelines for precision medicine](/papers/walrus/)
 
 ## Selected software
 
-- [MIxT](/software/mixt) — multi-tissue transcriptional integration.
-- [PREFFECT](/software/preffect) — generative modelling for FFPE RNA-seq.
-- [Candescence](/software/candescence) — *C. albicans* morphology classifier.
-- [deep-fMC](/software/deep-fmc) — functional microbial configurations from gut metagenomes.
+- [MIxT](/software/mixt/) — multi-tissue transcriptional integration.
+- [PREFFECT](/software/preffect/) — generative modelling for FFPE RNA-seq.
+- [Candescence](/software/candescence/) — *C. albicans* morphology classifier.
+- [deep-fMC](/software/deep-fmc/) — functional microbial configurations from gut metagenomes.
 
 ## Linked websites
 

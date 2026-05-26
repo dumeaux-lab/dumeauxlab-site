@@ -846,22 +846,31 @@ function NewsPage({ posts = [] }) {
 
   const imgSrc = (name) => NEWS_IMAGES[name] || `/assets/${name}`;
 
-  // Inline-link parser for `p` / `ul` text — supports `[label](url)`.
-  // External links open in a new tab; internal `/…` links stay in-tab.
+  // Inline-formatting parser for `p` / `ul` text. Supports:
+  //   [label](url)  → link  (external links open in a new tab)
+  //   **bold**      → <strong>
+  //   *italic*      → <em>
+  // Alternation order matters: `**` must be tried before `*` so bold wins.
   const renderInline = (text) => {
     const out = [];
-    const re = /\[([^\]]+)\]\(([^)]+)\)/g;
+    const re = /\[([^\]]+)\]\(([^)]+)\)|\*\*([^*]+)\*\*|\*([^*]+)\*/g;
     let last = 0, m, key = 0;
     while ((m = re.exec(text)) !== null) {
       if (m.index > last) out.push(text.slice(last, m.index));
-      const isExternal = /^https?:\/\//.test(m[2]);
-      out.push(
-        <a key={`l${key++}`} href={m[2]}
-           {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-           style={{ color: WP, borderBottom: `1px solid ${WO}`, textDecoration: "none" }}>
-          {m[1]}
-        </a>
-      );
+      if (m[1]) {
+        const isExternal = /^https?:\/\//.test(m[2]);
+        out.push(
+          <a key={`k${key++}`} href={m[2]}
+             {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+             style={{ color: WP, borderBottom: `1px solid ${WO}`, textDecoration: "none" }}>
+            {m[1]}
+          </a>
+        );
+      } else if (m[3]) {
+        out.push(<strong key={`k${key++}`}>{m[3]}</strong>);
+      } else if (m[4]) {
+        out.push(<em key={`k${key++}`}>{m[4]}</em>);
+      }
       last = m.index + m[0].length;
     }
     if (last < text.length) out.push(text.slice(last));

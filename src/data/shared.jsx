@@ -60,7 +60,7 @@ export const FUNDERS = [
   { name: "Vector Institute", logo: "/assets/images/funders/vector.png", url: "https://vectorinstitute.ai/" },
   { name: "CCSRI", logo: "/assets/images/funders/ccsri.png", url: "https://cancer.ca/en/research" },
   { name: "Breast Cancer Canada", logo: "/assets/images/funders/breast-cancer-canada.jpg", url: "https://www.breastcancerprogress.ca/" },
-  { name: "Verspeeten Family Cancer Centre Catalyst Grants", logo: "/assets/images/funders/verspeeten-catalyst.jpg", url: "https://www.lhsc.on.ca/verspeeten-family-cancer-centre" },
+  { name: "London Health Sciences Centre Research Institute", logo: "/assets/images/funders/lhsc-ri.jpg", url: "https://www.lhscresearch.ca/" },
   { name: "Schulich Medicine & Dentistry", logo: "/assets/images/funders/schulich.png", url: "https://www.schulich.uwo.ca/" },
   { name: "ERC", logo: "/assets/images/funders/erc.jpg", url: "https://erc.europa.eu/" },
 ];

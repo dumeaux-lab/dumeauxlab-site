@@ -25,8 +25,6 @@ const NAMES = [
   "bbd_2025.jpg",
   "bbd_2026.jpg",
   "IMG_1428.png",
-  "IMG_6538.jpg",
-  "IMG_6541.jpg",
   "IMG_6558.jpg",
   "cell-space.jpeg",
   "breast-cancer-canada-logo.png",

@@ -8,10 +8,6 @@ blocks:
     text: "Congratulations to Ray (Qianrui Wang), Noor Rizvi, and Aybars Nazlica for their poster presentations at the Anatomy and Cell Biology Research Day."
   - type: "grid"
     images:
-      - src: "IMG_6541.jpg"
-        caption: ""
-      - src: "IMG_6538.jpg"
-        caption: ""
       - src: "IMG_6558.jpg"
         caption: ""
   - type: "p"

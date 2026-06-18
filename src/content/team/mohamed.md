@@ -13,7 +13,8 @@ education:
   - "MSc → PhD transfer (2024–2025)"
   - "Honours, Computational Biochemistry, Western (2022–2024)"
 awards:
-  - "Ontario Graduate Scholarship (2025–2026)"
+  - "Ontario Graduate Scholarship – Doctoral (OGS-D) (2026–2027)"
+  - "Ontario Graduate Scholarship – Master's (OGS-M) (2025–2026)"
   - "Vector Scholarship in AI (2024–2025)"
   - "DUROP Summer Research Award (2023)"
 ---

@@ -11,4 +11,6 @@ research: "Systemic and local immune responses to predict response to treatment 
 education:
   - "MSc, Biochemistry (Collaborative Specialization in Machine Learning in Health and Biomedical Sciences), Western University (2025–present)"
   - "BMSc, Biochemistry, Western University (2020–2025)"
+awards:
+  - "Ontario Graduate Scholarship – Master's (OGS-M) (2026–2027)"
 ---

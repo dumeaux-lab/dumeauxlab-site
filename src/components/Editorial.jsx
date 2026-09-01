@@ -270,11 +270,10 @@ function HomePage({ tw, recentPapers = [], software = [], news = [] }) {
           <div style={{ fontFamily: MONO, fontSize: 10, letterSpacing: 2.5, textTransform: "uppercase", color: WP, marginBottom: 28 }}>
             Dumeaux Lab — Est. 2022
           </div>
-          <h1 style={{ fontFamily: DISPLAY, fontWeight: 900, fontSize: 56, lineHeight: 1.08, letterSpacing: -0.8, margin: 0 }}>
-            Single-cell genomics<br />
-            of human <em style={{ color: WP, fontStyle: "italic" }}>immunity</em><br />
-            and <em style={{ color: WP, fontStyle: "italic" }}>microbial</em><br />
-            communities.
+          <h1 style={{ fontFamily: DISPLAY, fontWeight: 900, fontSize: 48, lineHeight: 1.12, letterSpacing: -0.6, margin: 0 }}>
+            Cellular and functional heterogeneity<br />
+            in host <em style={{ color: WP, fontStyle: "italic" }}>immunity</em><br />
+            and <em style={{ color: WP, fontStyle: "italic" }}>microbial communities.</em>
           </h1>
           <p className="hero-blurb" style={{ fontFamily: SANS, fontSize: 16, lineHeight: 1.65, color: MUTED, marginTop: 22, maxWidth: 620 }}>Our lab applies single-cell and computational genomics to two main questions: how a patient's immune system interacts with their breast tumor, and how function varies within human microbial communities such as the gut microbiome and fungal pathogens.</p>
           <div style={{ display: "flex", gap: 12, marginTop: 32, flexWrap: "wrap" }}>

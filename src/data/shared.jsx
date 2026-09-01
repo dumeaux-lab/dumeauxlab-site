@@ -32,7 +32,7 @@ export const PILLARS = [
     title: "Microbial Communities",
     subtitle: "Phenotypic heterogeneity from single fungal cells to community-scale function",
     blurb:
-      "Single-cell and computational approaches to read microbial life across scales: individual fungal cells, multi-species interactions, and the functional configurations that organize the human gut microbiome.",
+      "Single-cell and computational approaches to study microbial life across scales: individual fungal cells, multi-species interactions, and recurring functional states in the human gut microbiome.",
     keywords: ["gut microbiome", "C. albicans", "functional archetypes", "scRNA-seq"],
     methods: ["microbial scRNA-seq", "deep learning", "archetypal analysis"],
   },

@@ -12,7 +12,7 @@ Most cancer research has focused on the molecular properties of the tumor and it
 
 ![Tumor–blood interactions in breast cancer patients](/assets/images/papers/28957325.png)
 
-In our most recent study, we identified molecular processes in the primary breast tumor that are tightly co-expressed with processes in the patient's blood cells — our window onto their systemic immune response. RNA profiling of blood is a practical way to read the state of the immune system in an individual patient, and feeds directly into precision-medicine workflows.
+In our most recent study, we identified molecular processes in the primary breast tumor that are tightly co-expressed with processes in the patient's blood cells. RNA profiling of blood is a practical way to read the state of the immune system in an individual patient, and feeds directly into precision-medicine workflows.
 
 To date, most of our work has relied on RNA harvested from whole blood, a mixture of many cell types including T and B lymphocytes, neutrophils, and platelets. The molecular profiles we get from these samples are therefore averages, blending the transcriptional programs of every cell type. Single-cell RNA sequencing now lets us read each cell type separately, which matters when tracking how an individual patient responds to therapy, develops adverse effects, or progresses toward recurrence.
 

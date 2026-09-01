@@ -271,11 +271,10 @@ function HomePage({ tw, recentPapers = [], software = [], news = [] }) {
             Dumeaux Lab — Est. 2022
           </div>
           <h1 style={{ fontFamily: DISPLAY, fontWeight: 900, fontSize: 56, lineHeight: 1.08, letterSpacing: -0.8, margin: 0 }}>
-            From single cells<br />
-            to <em style={{ color: WP, fontStyle: "italic" }}>patients</em> —<br />
-            immunity,<br />
-            tumors,<br />
-            microbiomes.
+            Single-cell genomics<br />
+            of human <em style={{ color: WP, fontStyle: "italic" }}>immunity</em><br />
+            and <em style={{ color: WP, fontStyle: "italic" }}>microbial</em><br />
+            communities.
           </h1>
           <p className="hero-blurb" style={{ fontFamily: SANS, fontSize: 16, lineHeight: 1.65, color: MUTED, marginTop: 22, maxWidth: 620 }}>Our lab applies single-cell and computational genomics to two main questions: how a patient's immune system interacts with their breast tumor, and how function varies within human microbial communities such as the gut microbiome and fungal pathogens.</p>
           <div style={{ display: "flex", gap: 12, marginTop: 32, flexWrap: "wrap" }}>
@@ -427,8 +426,7 @@ function ResearchPage() {
         <div style={{ fontFamily: MONO, fontSize: 9.5, letterSpacing: 2.5, textTransform: "uppercase", color: WP, marginBottom: 14 }}>§ Research programme</div>
         <h1 className="research-headline" style={{ fontFamily: DISPLAY, fontWeight: 900, fontSize: 72, lineHeight: 1.0, letterSpacing: -1 }}>
           The tumor in its <em style={{ color: WP, fontStyle: "italic" }}>host.</em><br />
-          The microbe in its <em style={{ color: WP, fontStyle: "italic" }}>community.</em><br />
-          One cell at a time.
+          The microbe in its <em style={{ color: WP, fontStyle: "italic" }}>community.</em>
         </h1>
         <p style={{ fontFamily: SANS, fontSize: 16, lineHeight: 1.6, color: MUTED, marginTop: 24, maxWidth: 680 }}>
           We profile blood, tumors, and microbes from single cells to whole communities, and build the computational methods that turn those signals into predictions of treatment response and disease progression.
@@ -1115,8 +1113,8 @@ function SoftwarePage({ software = [] }) {
       <Nav active="Software" />
       <div className="section-pad" style={{ padding: "64px 40px 36px", borderBottom: `1px solid ${RULE}` }}>
         <div style={{ fontFamily: MONO, fontSize: 9.5, letterSpacing: 2.5, textTransform: "uppercase", color: WP, marginBottom: 14 }}>§ Software & tools</div>
-        <h1 className="software-headline" style={{ fontFamily: DISPLAY, fontWeight: 900, fontSize: 60, letterSpacing: -0.8 }}>Tools we've built and <em style={{ color: WP }}>made public.</em></h1>
-        <p style={{ fontFamily: SANS, fontSize: 15, color: MUTED, marginTop: 16, maxWidth: 620, lineHeight: 1.6 }}>Open-source R packages, Python frameworks, and interactive web applications.</p>
+        <h1 className="software-headline" style={{ fontFamily: DISPLAY, fontWeight: 900, fontSize: 60, letterSpacing: -0.8 }}>Software we <em style={{ color: WP }}>build.</em></h1>
+        <p style={{ fontFamily: SANS, fontSize: 15, color: MUTED, marginTop: 16, maxWidth: 620, lineHeight: 1.6 }}>Open-source R packages, Python frameworks, and interactive web applications, alongside the code behind our papers.</p>
       </div>
       <div className="software-row section-pad" style={{ padding: "40px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
         {software.map((s, i) => (

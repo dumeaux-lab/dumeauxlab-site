@@ -9,7 +9,7 @@ blocks:
   - type: "h2"
     text: "Major Publications"
   - type: "p"
-    text: "Noor Rizvi (MSc) led a comprehensive study on the mutational landscape of pure DCIS, now published in Breast Cancer Research. Mohamed Meawad (PhD) uncovered functional archetypes in the gut microbiome, now accepted in Microbiome."
+    text: "Noor Rizvi (MSc) led a comprehensive study on the mutational landscape of pure ductal carcinoma in situ (DCIS), now published in Breast Cancer Research. Mohamed Meawad (PhD) uncovered functional archetypes in the gut microbiome, now accepted in Microbiome."
   - type: "youtube"
     id: "C_aYoAG1KEo"
     caption: "Vanessa presenting at the Microbiome Virtual International Forum"

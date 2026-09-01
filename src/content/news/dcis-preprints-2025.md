@@ -1,7 +1,7 @@
 ---
 date: "2025-03-06"
 title: "Two new preprints on DCIS FFPE profiling!"
-excerpt: "Congratulations to Eliseos Mucaki and Noor Rizvi! New preprints on PREFFECT and the DNA mutational landscape of DCIS."
+excerpt: "Congratulations to Eliseos Mucaki and Noor Rizvi! New preprints on PREFFECT and the DNA mutational landscape of ductal carcinoma in situ."
 tag: "Research"
 blocks:
   - type: "p"
@@ -12,5 +12,5 @@ blocks:
     text: "Our new manuscript covering a new FFPE-based RNA-seq methodology. Led by John Mucaki with Vanessa Dumeaux at Western and Eileen Rakovitch at Sunnybrook."
     url: "https://bsky.app/profile/hallettmiket.bsky.social/post/3ljblivbolc25"
   - type: "p"
-    text: "Second, we characterized the DNA mutational landscape of DCIS, identifying specific mutated genes associated with early recurrence, particularly in the context of radiotherapy (Rizvi et al., medRxiv 2025)."
+    text: "Second, we characterized the DNA mutational landscape of ductal carcinoma in situ (DCIS), identifying specific mutated genes associated with early recurrence, particularly in the context of radiotherapy (Rizvi et al., medRxiv 2025)."
 ---

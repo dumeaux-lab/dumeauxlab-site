@@ -5,5 +5,5 @@ initials: "NR"
 joined: 2025
 alum: true
 photoKey: "noor"
-bio: "DCIS mutational landscape."
+bio: "Mutational landscape of in situ breast cancer."
 ---

@@ -22,8 +22,8 @@ export const PILLARS = [
     title: "Immunity × Tumor",
     subtitle: "Crosstalk between peripheral immunity and the tumor microenvironment",
     blurb:
-      "We profile blood and tumor at single-cell resolution to map the immune–tumor crosstalk, and build molecular predictors of recurrence and treatment response across invasive breast cancer and DCIS.",
-    keywords: ["breast cancer", "DCIS", "systemic immunity", "blood transcriptomics"],
+      "We profile blood and tumor at single-cell resolution to map the immune–tumor crosstalk, and build molecular predictors of recurrence and treatment response across invasive and in situ breast cancer.",
+    keywords: ["breast cancer", "in situ disease", "systemic immunity", "blood transcriptomics"],
     methods: ["bulk + scRNA-seq", "WES", "spatial transcriptomics"],
   },
   {
@@ -40,9 +40,9 @@ export const PILLARS = [
     id: "methods",
     num: "03",
     title: "Computational Methods",
-    subtitle: "Systems epidemiology for the genomics era",
+    subtitle: "Systems epidemiology: -omics in human populations",
     blurb:
-      "We combine -omics with epidemiology to push complex real-world data toward questions of causation, not just correlation. The tools we've built along the way, such as MIxT, PREFFECT, and Candescence, support the rest of the lab's work.",
+      "We develop statistical and machine-learning methods for -omics data collected in human cohorts and clinical samples. MIxT, PREFFECT, Candescence and deep-fMC came out of this work.",
     keywords: ["systems epidemiology", "FFPE RNA-seq", "multi-tissue integration"],
     methods: ["probabilistic models", "graph neural nets", "R / Python packages"],
   },

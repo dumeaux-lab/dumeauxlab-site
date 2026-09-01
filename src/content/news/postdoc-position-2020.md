@@ -1,7 +1,7 @@
 ---
 date: "2020-08-07"
 title: "Open postdoc position — cancer informatics & statistics (DCIS)"
-excerpt: "Joint postdoc position with Prof. Michael Hallett on a CIHR-funded DCIS project."
+excerpt: "Joint postdoc position with Prof. Michael Hallett on a CIHR-funded project in ductal carcinoma in situ (DCIS)."
 tag: "Lab news"
 blocks:
   - type: "p"

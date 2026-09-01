@@ -2,8 +2,8 @@
 title: "Computational Methods"
 pillarId: "methods"
 kicker: "03 / 03"
-subtitle: "Systems epidemiology for the genomics era"
-intro: "We build the probabilistic models, neural networks, and software packages that integrate -omics data with population-scale epidemiology, so messy real-world data can inform causation, not just correlation."
+subtitle: "Systems epidemiology: -omics in human populations"
+intro: "We build probabilistic models, neural networks, and software packages for -omics data that are noisy, sparse, or collected under clinical constraints: degraded FFPE material, matched tissues from the same patient, microscopy images, and metagenomes."
 ---
 
 ## Novel bioinformatics approaches and software

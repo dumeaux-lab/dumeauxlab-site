@@ -40,7 +40,11 @@ const NAMES = [
   "lhrd-2026.jpg",                // 4 students at London Health Research Day
   "megabike-2026-group.jpg",      // BCC Megabike Day — lab in front of the bike
   "megabike-2026-selfie.jpg",     // BCC Megabike Day — selfie on the bike
+  // Fall 2026
+  "CIBC_run2.png",                // CIBC Run for the Cure 2026 (source in public/assets/)
 ];
+// Fallback source dir: images dropped straight into public/assets/.
+const ALT_DIR = path.resolve(__dirname, "../public/assets");
 
 // Logos/diagrams want to keep transparency → PNG.
 // Photos go to JPEG for size. Override here as needed.
@@ -74,8 +78,11 @@ async function encode(srcPath, name) {
 const entries = [];
 let total = 0;
 for (const name of NAMES) {
-  const srcPath = path.join(SRC_DIR, name);
-  try { await fs.access(srcPath); } catch { console.warn(`SKIP ${name} — no source at ${srcPath}`); continue; }
+  let srcPath = path.join(SRC_DIR, name);
+  try { await fs.access(srcPath); } catch {
+    srcPath = path.join(ALT_DIR, name);
+    try { await fs.access(srcPath); } catch { console.warn(`SKIP ${name} — not in ${SRC_DIR} or ${ALT_DIR}`); continue; }
+  }
   const { buf, mime, srcW, srcH } = await encode(srcPath, name);
   const b64 = buf.toString("base64");
   entries.push(`  ${JSON.stringify(name)}: "data:${mime};base64,${b64}"`);

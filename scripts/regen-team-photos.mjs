@@ -7,7 +7,7 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIR = path.resolve(__dirname, "../public/assets/team");
 const OUT = path.resolve(__dirname, "../src/data/team-photos.js");
-const KEYS = ["ajita","akshay","alice","ankit","arad","athena","aybars","binh","bushra","dalwinder","eliseos","emily","erin","evelyn","karen","lakni","mohamed","monica","nabeeha","noor","qianrui","rachel","rishi","rohan","sara","shreya","teddy","vanessa","yubing"];
+const KEYS = ["ajita","akshay","alice","ankit","arad","athena","aybars","besa","binh","bushra","dalwinder","eliseos","emily","erin","evelyn","karen","lakni","mohamed","monica","nabeeha","noor","qianrui","rachel","rishi","rohan","sara","shreya","teddy","vanessa","yubing"];
 const TARGET = 440;
 
 async function findSource(key) {
@@ -23,6 +23,11 @@ const BG = { r: 247, g: 244, b: 239 };
 // Keys whose source aspect ratio we want to preserve (zoom-out / letterbox)
 // instead of cropping to a square. Add more here as needed.
 const CONTAIN_KEYS = new Set(["vanessa"]);
+// Optional pre-crop (in source pixels) for wide / environmental shots, applied
+// before the square resize so the face fills the frame. Source file untouched.
+const CROPS = {
+  besa: { left: 390, top: 230, width: 500, height: 500 },
+};
 
 const entries = [];
 for (const key of KEYS) {
@@ -35,8 +40,9 @@ for (const key of KEYS) {
     ? { width: TARGET, height: TARGET, fit: "contain", background: BG }
     // Anchor the crop to the top edge — heads stay in frame, bottoms get trimmed.
     : { width: TARGET, height: TARGET, fit: "cover", position: "top" };
-  const buf = await sharp(src)
-    .rotate()  // honor EXIF orientation
+  let img = sharp(src).rotate();  // honor EXIF orientation
+  if (CROPS[key]) img = sharp(await img.extract(CROPS[key]).toBuffer());
+  const buf = await img
     .resize(resizeOpts)
     .flatten({ background: BG })  // ensure no alpha; fill against cream if PNG
     .jpeg({ quality: 82, mozjpeg: true })

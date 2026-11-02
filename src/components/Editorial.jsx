@@ -636,6 +636,17 @@ function PIPage() {
 }
 
 // ─── The Lab page ─────────────────────────────────────────────────────────────
+// Team photo, or an initials tile when no photo exists yet in team-photos.js.
+function TeamAvatar({ member, style }) {
+  const src = TEAM_PHOTOS[member.photoKey];
+  if (src) return <img src={src} alt={member.name} style={style} />;
+  const size = typeof style.width === "number" ? style.width : 160;
+  return (
+    <div aria-label={member.name} style={{ ...style, background: BG3, color: WP, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: DISPLAY, fontWeight: 800, fontSize: Math.round(size * 0.36), letterSpacing: 0.5, flexShrink: 0 }}>
+      {member.initials}
+    </div>);
+}
+
 function TeamModal({ member, onClose }) {
   if (!member) return null;
   return (
@@ -644,7 +655,7 @@ function TeamModal({ member, onClose }) {
         <button onClick={onClose} style={{ position: "absolute", top: 14, right: 14, background: "none", border: "none", fontSize: 22, cursor: "pointer", color: MUTED, lineHeight: 1, zIndex: 2 }}>×</button>
         <div className="modal-row" style={{ display: "grid", gridTemplateColumns: "160px 1fr", gap: 0 }}>
           <div style={{ background: BG3 }}>
-            <img src={TEAM_PHOTOS[member.photoKey]} style={{ width: "100%", aspectRatio: "1", objectFit: "cover", objectPosition: "center top", display: "block" }} />
+            <TeamAvatar member={member} style={{ width: "100%", aspectRatio: "1", objectFit: "cover", objectPosition: "center top", display: "block" }} />
           </div>
           <div style={{ padding: "28px 24px 20px" }}>
             <div style={{ fontFamily: MONO, fontSize: 9.5, letterSpacing: 2, textTransform: "uppercase", color: WP, marginBottom: 6 }}>{member.role}</div>
@@ -729,7 +740,7 @@ function PeoplePage({ team = [] }) {
         <div className="team-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 48px" }}>
           {team.filter((t) => !t.alum && t.role !== "Principal Investigator").map((t, i) =>
           <div key={i} onClick={() => setSelected(t)} style={{ display: "grid", gridTemplateColumns: "64px 1fr auto", alignItems: "center", gap: 16, padding: "14px 0", borderTop: `1px solid ${RULE}`, cursor: "pointer" }}>
-              <img src={TEAM_PHOTOS[t.photoKey]} style={{ width: 56, height: 56, borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} />
+              <TeamAvatar member={t} style={{ width: 56, height: 56, borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} />
               <div>
                 <div style={{ fontFamily: SANS, fontSize: 16, fontWeight: 500 }}>{t.name}</div>
                 <div style={{ fontFamily: MONO, fontSize: 10, color: WP, letterSpacing: 0.5, textTransform: "uppercase", marginTop: 3 }}>{t.role}</div>
@@ -796,7 +807,7 @@ function PeoplePage({ team = [] }) {
             </div>;
           const card = (t, i) =>
             <div key={i} style={{ display: "grid", gridTemplateColumns: "32px 1fr", alignItems: "center", gap: 10, padding: "9px 0", borderTop: `1px solid ${RULE}` }}>
-              <img src={TEAM_PHOTOS[t.photoKey]} style={{ width: 32, height: 32, borderRadius: "50%", objectFit: "cover" }} />
+              <TeamAvatar member={t} style={{ width: 32, height: 32, borderRadius: "50%", objectFit: "cover" }} />
               <div>
                 <div style={{ fontFamily: SANS, fontSize: 13, fontWeight: 500 }}>{t.name}</div>
                 <div style={{ fontFamily: MONO, fontSize: 9, color: MUTED, letterSpacing: 0.3, textTransform: "uppercase", marginTop: 1 }}>{t.role}</div>
@@ -912,9 +923,19 @@ function NewsPage({ posts = [] }) {
     if (b.type === "youtube") return (
       <figure key={i} style={{ margin: "24px 0" }}>
         <div style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
-          <iframe src={`https://www.youtube.com/embed/${b.id}`} style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }} allowFullScreen />
+          <iframe
+            src={`https://www.youtube-nocookie.com/embed/${b.id}`}
+            title={b.caption || "YouTube video"}
+            loading="lazy"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
+            allowFullScreen />
         </div>
-        {b.caption && <figcaption style={{ fontFamily: MONO, fontSize: 10, color: MUTED, marginTop: 8, letterSpacing: 0.5 }}>{b.caption}</figcaption>}
+        <figcaption style={{ fontFamily: MONO, fontSize: 10, color: MUTED, marginTop: 8, letterSpacing: 0.5 }}>
+          {b.caption}{b.caption && " · "}
+          <a href={`https://www.youtube.com/watch?v=${b.id}`} target="_blank" rel="noopener noreferrer" style={{ color: WP, textDecoration: "none", borderBottom: `1px solid ${WO}` }}>Watch on YouTube ↗</a>
+        </figcaption>
       </figure>);
 
     return null;

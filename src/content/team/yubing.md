@@ -12,6 +12,7 @@ education:
   - "MSc, Anatomy & Cell Biology (Collaborative Specialization in Machine Learning in Health and Biomedical Sciences), Western University (2025–present)"
   - "BSc, Immunology & Statistics, University of Toronto (2018–2023)"
 awards:
+  - "TBCRU MSc fellowship, Breast Cancer Canada (2026–2027)"
   - "TBCRU MSc fellowship, Breast Cancer Canada (2025–2026)"
   - "ISSRP Award (2022)"
   - "2nd place, Ontario-Quebec Undergraduate Immunology Conference (2022)"

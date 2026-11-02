@@ -12,5 +12,6 @@ education:
   - "MSc, Biochemistry (Collaborative Specialization in Machine Learning in Health and Biomedical Sciences), Western University (2025–present)"
   - "BMSc, Biochemistry, Western University (2020–2025)"
 awards:
+  - "TBCRU MSc fellowship, Breast Cancer Canada (2026–2027)"
   - "Ontario Graduate Scholarship – Master's (OGS-M) (2026–2027)"
 ---

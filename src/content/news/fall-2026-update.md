@@ -22,7 +22,7 @@ blocks:
   - type: "h2"
     text: "Posters and presentations"
   - type: "p"
-    text: "Congratulations to Mohamed, Yubing, Bushra and Binh, who presented their work this year."
+    text: "Congratulations to Mohamed, Yubing, Bushra and Binh, who presented their work this fall."
   - type: "p"
     text: "**National and international meetings**"
   - type: "ul"

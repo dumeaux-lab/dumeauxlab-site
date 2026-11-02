@@ -1,7 +1,7 @@
 ---
 date: "2026-11-02"
 title: "Fall 2026 — new honours students, awards, posters, and Run for the Cure round 2"
-excerpt: "Welcoming two honours thesis students, TBCRU awards for Yubing and Bushra, Yubing featured by Breast Cancer Canada, posters at CSHL and CCIC, and back at the CIBC Run for the Cure."
+excerpt: "Welcoming two honours thesis students, TBCRU awards for Yubing and Bushra, Yubing featured by Breast Cancer Canada, presentations at CSHL, CCIC and ACB Research Day, and back at the CIBC Run for the Cure."
 tag: "Lab news"
 blocks:
   - type: "h2"
@@ -20,13 +20,22 @@ blocks:
     id: "mO9Y5buW-40"
     caption: "Meet the Researcher: Yubing Xia (Breast Cancer Canada)"
   - type: "h2"
-    text: "Poster presentations"
+    text: "Posters and presentations"
   - type: "p"
-    text: "Congratulations to Mohamed and Yubing, who presented their work this year:"
+    text: "Congratulations to Mohamed, Yubing, Bushra and Binh, who presented their work this year."
+  - type: "p"
+    text: "**National and international meetings**"
   - type: "ul"
     items:
       - "**Mohamed Meawad** — *Multi-Kingdom Graph Learning for IBD Prediction and Microbial Interaction Discovery*. Meawad M, Singh D, Dumeaux V. Cold Spring Harbor Laboratory Microbiome Meeting, New York, USA."
       - "**Yubing Xia** — *Systemic B-cell Immune States Associate with Response to Neoadjuvant Therapy in HER2-Positive Breast Cancer*. Xia Y, Ray A, Abeyesekera L, Lynn K, Dela Cruz M, Mucaki EJ, Grindrod N, Ali A, Scott W, Han R, Brackstone M, Lohmann A, Jerzak K, Dumeaux V. Canadian Cancer Immunotherapy Consortium, Toronto, Canada."
+  - type: "p"
+    text: "**Anatomy & Cell Biology Research Day** (London, Canada)"
+  - type: "ul"
+    items:
+      - "**Mohamed Meawad** — poster + selected oral presentation: *Multi-Kingdom Graph Learning for IBD Prediction and Microbial Interaction Discovery*. Meawad M, Singh D, Dumeaux V."
+      - "**Binh Tran** — poster + selected 3MT presentation: *Novel Microfluidic Platform for High-Resolution Profiling of Complex Microbial Communities*. Tran B, Parmar S, Sulemanovski B, Dumeaux V."
+      - "**Bushra Kabbani** — poster: *Systemic-Tumour Immune Response to Neoadjuvant Chemo-Immunotherapy in Triple-Negative Breast Cancer*. Kabbani B, Abeyesekera L, Lynn K, Dela Cruz M, Mucaki EJ, Grindrod N, Jerzak K, Brackstone M, Lohmann A, Dumeaux V."
   - type: "h2"
     text: "CIBC Run for the Cure, round 2"
   - type: "p"

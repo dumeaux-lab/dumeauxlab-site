@@ -65,7 +65,9 @@ const software = defineCollection({
     blurb: z.string(),                     // one-liner for cards
     description: z.string().optional(),    // full paragraph for detail page
     github: z.string().optional(),
-    www: z.string().optional(),
+    www: z.string().optional(),            // shown as "Live demo"
+    video: z.string().optional(),          // shown as "Video"
+    docs: z.string().optional(),           // shown as "Docs"
     paper: z.string().optional(),          // DOI string (without https://doi.org/)
     install: z.string().optional(),        // multi-line install snippet
     repos: z.array(z.object({

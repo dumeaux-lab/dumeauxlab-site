@@ -1084,6 +1084,8 @@ function SoftwareDetailPage({ tool }) {
         <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
           {s.github && <a href={s.github} target="_blank" style={{ fontFamily: MONO, fontSize: 11, color: WP, textDecoration: "none", border: `1px solid ${WO}`, padding: "7px 14px" }}>GitHub ↗</a>}
           {s.www && <a href={s.www} target="_blank" style={{ fontFamily: MONO, fontSize: 11, color: WP, textDecoration: "none", border: `1px solid ${WO}`, padding: "7px 14px" }}>Live demo ↗</a>}
+          {s.video && <a href={s.video} target="_blank" style={{ fontFamily: MONO, fontSize: 11, color: WP, textDecoration: "none", border: `1px solid ${WO}`, padding: "7px 14px" }}>Video ↗</a>}
+          {s.docs && <a href={s.docs} target="_blank" style={{ fontFamily: MONO, fontSize: 11, color: WP, textDecoration: "none", border: `1px solid ${WO}`, padding: "7px 14px" }}>Docs ↗</a>}
           {s.paper && <a href={`https://doi.org/${s.paper}`} target="_blank" style={{ fontFamily: MONO, fontSize: 11, color: WP, textDecoration: "none", border: `1px solid ${WO}`, padding: "7px 14px" }}>Paper ↗</a>}
         </div>
       </div>

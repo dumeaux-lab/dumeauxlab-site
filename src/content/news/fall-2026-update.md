@@ -15,7 +15,7 @@ blocks:
   - type: "h2"
     text: "Meet the Researcher: Yubing Xia"
   - type: "p"
-    text: "Yubing was featured in Breast Cancer Canada's [Meet the Researcher](https://breastcancer.ca/meet-yubing/) series. In a short blog post and video, she explains her work on HER2-positive breast cancer: whether a patient's \"immune readiness\" before treatment, and immune cells circulating in the blood, can help predict who will respond to neoadjuvant therapy. She also talks about AI in pathology, patient partnership in research, and her message to people newly diagnosed."
+    text: "Yubing was featured in Breast Cancer Canada's [Meet the Researcher](https://breastcancer.ca/meet-yubing/) series. In a short blog post and video, she explains her work on HER2-positive breast cancer: whether a patient's \"immune readiness\" before treatment, and immune cells circulating in the blood, can help predict who will respond to neoadjuvant therapy. She also talks about AI in pathology and patient partnership in research."
   - type: "youtube"
     id: "mO9Y5buW-40"
     caption: "Meet the Researcher: Yubing Xia (Breast Cancer Canada)"

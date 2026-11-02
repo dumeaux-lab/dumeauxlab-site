@@ -1,7 +1,7 @@
 ---
 date: "2026-11-02"
-title: "Fall 2026 — new honours students, TBCRU awards, Meet the Researcher, and Run for the Cure round 2"
-excerpt: "Welcoming two honours thesis students, congratulating Yubing and Bushra on their TBCRU awards, Yubing featured by Breast Cancer Canada, and back at the CIBC Run for the Cure."
+title: "Fall 2026 — new honours students, awards, posters, and Run for the Cure round 2"
+excerpt: "Welcoming two honours thesis students, TBCRU awards for Yubing and Bushra, Yubing featured by Breast Cancer Canada, posters at CSHL and CCIC, and back at the CIBC Run for the Cure."
 tag: "Lab news"
 blocks:
   - type: "h2"
@@ -19,6 +19,14 @@ blocks:
   - type: "youtube"
     id: "mO9Y5buW-40"
     caption: "Meet the Researcher: Yubing Xia (Breast Cancer Canada)"
+  - type: "h2"
+    text: "Poster presentations"
+  - type: "p"
+    text: "Congratulations to Mohamed and Yubing, who presented their work this year:"
+  - type: "ul"
+    items:
+      - "**Mohamed Meawad** — *Multi-Kingdom Graph Learning for IBD Prediction and Microbial Interaction Discovery*. Meawad M, Singh D, Dumeaux V. Cold Spring Harbor Laboratory Microbiome Meeting, New York, USA."
+      - "**Yubing Xia** — *Systemic B-cell Immune States Associate with Response to Neoadjuvant Therapy in HER2-Positive Breast Cancer*. Xia Y, Ray A, Abeyesekera L, Lynn K, Dela Cruz M, Mucaki EJ, Grindrod N, Ali A, Scott W, Han R, Brackstone M, Lohmann A, Jerzak K, Dumeaux V. Canadian Cancer Immunotherapy Consortium, Toronto, Canada."
   - type: "h2"
     text: "CIBC Run for the Cure, round 2"
   - type: "p"
